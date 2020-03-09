@@ -1,0 +1,32 @@
+.card-member {
+   display: flex;
+   height: 0;
+   overflow: hidden;
+   padding-top: 15px;
+
+   &__img-wrap {
+      overflow: hidden;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-left: 15px;
+   }
+
+   &__img {
+      object-fit: cover;
+      height: 100%;
+   }
+}
+
+.card-member__text {
+   padding: 0 20px;
+
+   span {
+      @include ubuntu(bold);
+   }
+
+   p {
+      margin-top: 15px;
+   }
+}

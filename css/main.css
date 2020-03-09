@@ -715,7 +715,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
   opacity: 0;
   padding: 20px;
   transition: 0.3s;
@@ -740,6 +740,99 @@ p {
 }
 .review .btn:hover {
   background: #1f2122;
+}
+
+.crew {
+  background: url("/img/crew/bg_crew.jpg") center top/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+.crew__content {
+  background-color: rgba(47, 50, 52, 0.9);
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  padding-left: 95px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.crew__book {
+  width: calc(960px / 2 - 110px);
+}
+
+.card-member {
+  display: flex;
+  height: 0;
+  overflow: hidden;
+  padding-top: 15px;
+}
+.card-member__img-wrap {
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-left: 15px;
+}
+.card-member__img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.card-member__text {
+  padding: 0 20px;
+}
+.card-member__text span {
+  font-family: "ubuntu", Arial, sans-serif;
+  font-weight: 600;
+}
+.card-member__text p {
+  margin-top: 15px;
+}
+
+.accordeon__item {
+  margin-bottom: 35px;
+}
+.accordeon__item:last-child {
+  margin-bottom: 0;
+}
+
+.accordeon__link {
+  display: inline-block;
+  font-family: "gagalin", Arial, sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+}
+.accordeon__link::before {
+  content: "";
+  display: inline-block;
+  border: 7px solid transparent;
+  border-left-width: 5px;
+  border-right-width: 5px;
+  border-top-color: #f9b43b;
+  border-bottom: none;
+  margin-right: 10px;
+}
+
+.accordeon__item_activ .card-member {
+  height: 100%;
+  overflow: visible;
+}
+.accordeon__item_activ .accordeon__link {
+  color: #f9b43b;
+}
+.accordeon__item_activ .accordeon__link::before {
+  content: "";
+  display: inline-block;
+  border: 7px solid transparent;
+  border-left-width: 5px;
+  border-right-width: 5px;
+  border-bottom-color: #f9b43b;
+  border-top: none;
+  margin-right: 10px;
 }
 
 .footer {

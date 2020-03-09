@@ -1,0 +1,27 @@
+.preview {
+   display: flex;
+   align-items: center;
+   flex: 0.8;
+   
+   &__img {
+      flex: 1;
+      &__img-elem {
+         max-width: 100%;
+         height: auto;
+      }
+   }
+
+   &__text {
+      flex: 1;
+      &_padding-top {
+         padding-top: 100px;
+      }
+   }
+
+   &__pricetag {
+      display: flex;
+      align-items: flex-end;
+      margin-top: 10px;
+   }
+}
+

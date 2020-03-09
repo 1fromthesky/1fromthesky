@@ -1,0 +1,20 @@
+.feature {
+   text-align: center;
+   
+   &__subtitle {
+      margin: 34px 0px 10px;
+      line-height: 1.2;
+      @include lifehack();
+      font-size: 24px;
+   }
+
+   &__icon {
+      height: 100px;
+      display: flex;
+      justify-content: center;
+   }
+
+   p {
+      color: rgba(47, 50, 52, 0.8);
+   }
+}

@@ -1,0 +1,9 @@
+.performance {
+   background: url('/img/performance/texture.png'), url('/img/performance/salat.jpg') center center / cover no-repeat;
+   color: $white;
+   &__subtitle {
+      @include lifehack();
+      font-size: 65px;
+      line-height: 1.2;
+   }
+}

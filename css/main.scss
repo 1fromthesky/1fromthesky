@@ -1,0 +1,29 @@
+// colors
+$orange: #e45028;
+$yellow: #f9b43b;
+$black: #2f3234;
+$red: #e35028;
+$white: #ffffff;
+
+// setups
+@import './_misc/normalize';
+@import './_misc/mixins';
+@import './_misc/fonts';
+@import './_misc/layout';
+
+// components
+@import './blocks/slide';
+@import './blocks/performance';
+@import './blocks/menu';
+@import './blocks/logo';
+@import './blocks/header';
+@import './blocks/btn';
+@import './blocks/pagination';
+@import './blocks/preview';
+@import './blocks/mover';
+@import './blocks/kitchen';
+@import './blocks/feature';
+@import './blocks/price';
+@import './blocks/feedback';
+@import './blocks/review';
+@import './blocks/footer';

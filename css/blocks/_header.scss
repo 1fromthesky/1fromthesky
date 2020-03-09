@@ -1,0 +1,13 @@
+.header {
+   padding: 12px 0px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   @include ubuntu(regular);
+   font-size: 13px;
+
+   &__btns {
+      display: flex;
+      align-items: center;
+   }
+}

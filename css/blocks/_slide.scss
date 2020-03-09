@@ -1,0 +1,42 @@
+.slide {
+   // display: flex;
+   // flex-direction: column;
+   // justify-content: space-between;
+   height: 100vh;
+   min-height: 650px;
+   width: 100%;
+   position: relative;
+
+   &__title {
+      @include gagalin();
+      font-size: 72px;
+      color: $yellow;
+      line-height: 1;
+      letter-spacing: 2px;
+      margin-bottom: 50px;
+      span {
+         font-size: 30px;
+      }
+
+      &_center {
+         text-align: center;
+      }
+
+      &_black {
+         color: $black;
+      }
+
+      &_white {
+         color: $white;
+      }
+
+      &_red {
+         color: $red;
+      }
+
+      &_margin-none {
+         margin: 0;
+      }
+   }
+}
+

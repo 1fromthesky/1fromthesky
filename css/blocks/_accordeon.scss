@@ -1,15 +1,17 @@
 .accordeon__item {
    margin-bottom: 35px;
+
    &:last-child {
       margin-bottom: 0;
    }
 }
+
 .accordeon__link {
    display: inline-block;
    @include gagalin();
    font-size: 14px;
    color: $white;
-   
+
    &::before {
       content: '';
       display: inline-block;
@@ -22,7 +24,7 @@
    }
 }
 
-.accordeon__item_activ {
+.accordeon__item-activ {
    .card-member {
       height: 100%;
       overflow: visible;
@@ -30,7 +32,7 @@
 
    .accordeon__link {
       color: $yellow;
-      
+
       &::before {
          content: '';
          display: inline-block;

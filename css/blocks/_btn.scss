@@ -7,4 +7,15 @@
    border-radius: 5px;
    line-height: 1;
    display: inline-block;
+   border: 2px solid transparent;
+   outline: none;
+
+   &_cancel {
+      background: none;
+      @include ubuntu(light);
+   }
+
+   &:focus {
+      border: 2px solid $yellow;
+   }
 }

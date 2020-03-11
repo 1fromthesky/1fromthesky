@@ -1,16 +1,22 @@
 .pagination {
    position: absolute;
-   top: 100px;
+   display: block;
+   top: 50%;
    right: -10px;
    z-index: 100;
 }
+
 .pagination__list {
    position: fixed;
+   transform: translateY(-50%);
+
 }
+
 .pagination__item {
    margin-bottom: 15px;
    position: relative;
-   &_active::before {
+
+   &-active::before {
       content: '';
       display: block;
       position: absolute;
@@ -23,9 +29,10 @@
       border-radius: 50%;
    }
 }
+
 .pagination__link {
    background: #fff;
-   width: 7px;
-   height: 7px;
+   width: 6px;
+   height: 6px;
    border-radius: 50%;
 }

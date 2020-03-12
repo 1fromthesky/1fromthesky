@@ -656,15 +656,14 @@ p {
 }
 
 .pagination {
-  position: absolute;
+  position: fixed;
   display: block;
   top: 50%;
-  right: -10px;
+  right: 50px;
   z-index: 100;
 }
 
 .pagination__list {
-  position: fixed;
   transform: translateY(-50%);
 }
 
@@ -921,6 +920,58 @@ p {
   background: url("/img/form/bg-texture.png"), url("/img/form/form-bg.jpg") center center/cover;
 }
 
+.carte {
+  background: url(/img/carte/menu_pic.jpg) center center/cover no-repeat;
+}
+.carte__wrap-title {
+  position: relative;
+  left: 100px;
+  top: 150px;
+}
+.carte__list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+.carte__item {
+  display: flex;
+}
+.carte__item_active .carte__content {
+  min-width: 600px;
+  overflow: visible;
+}
+.carte__link {
+  display: flex;
+  align-items: flex-end;
+  padding: 1em;
+}
+.carte__link_meat {
+  background: url("/img/carte/menu_pic2.jpg") center/cover no-repeat;
+}
+.carte__link_veg {
+  background: url("/img/carte/menu_pic3.jpg") center/cover no-repeat;
+}
+.carte__link_diet {
+  background: url("/img/carte/menu_pic4.jpg") center/cover no-repeat;
+}
+.carte__title {
+  font-family: "gagalin", Arial, sans-serif;
+  font-size: 3em;
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
+  margin-bottom: 40px;
+}
+.carte__content {
+  background: rgba(47, 50, 52, 0.8);
+  width: 0;
+  overflow: hidden;
+}
+.carte__content p {
+  padding: 50px 30px;
+}
+
 .form {
   display: flex;
   justify-content: space-between;
@@ -1023,12 +1074,34 @@ p {
   margin-right: 10px;
 }
 
+.map {
+  background: url("/img/map/bgmap.jpg") center center/cover no-repeat;
+}
+
+.social__svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+
+.presentation {
+  background: url("/img/presentation/presentation_bg.jpg") center center/cover no-repeat;
+}
+
 .footer {
-  background: url("/img/footer/chalkboard_texture.jpg");
+  background: url("/img/footer/chalkboard_texture.jpg") center center/cover no-repeat;
   padding: 11px 0px;
+  position: absolute;
+  bottom: 0;
 }
 
 .phone {
+  width: 50%;
   color: #e45028;
   font-weight: 500;
+}
+
+.social {
+  width: 50%;
+  text-align: right;
 }

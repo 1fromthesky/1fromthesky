@@ -1,0 +1,65 @@
+.carte {
+   background: url(/img/carte/menu_pic.jpg) center center / cover no-repeat;
+
+   &__wrap-title {
+      position: relative;
+      left: 100px;
+      top: 150px;
+   }
+
+   &__list {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+   }
+
+   &__item {
+      display: flex;
+
+      &_active {
+         .carte__content {
+            min-width: 600px;
+            overflow: visible;
+         }
+      }
+   }
+
+   &__link {
+      display: flex;
+      align-items: flex-end;
+      padding: 1em;
+
+      &_meat {
+         background: url('/img/carte/menu_pic2.jpg') center / cover no-repeat;
+      }
+
+      &_veg {
+         background: url('/img/carte/menu_pic3.jpg') center / cover no-repeat;
+      }
+
+      &_diet {
+         background: url('/img/carte/menu_pic4.jpg') center / cover no-repeat;
+      }
+   }
+
+   &__title {
+      @include gagalin();
+      font-size: 3em;
+      transform: rotate(180deg);
+      writing-mode: vertical-lr;
+      margin-bottom: 40px;
+   }
+
+   &__content {
+      background: rgba($black, .8);
+      width: 0;
+      overflow: hidden;
+
+      p {
+         padding: 50px 30px;
+      }
+   }
+}
+

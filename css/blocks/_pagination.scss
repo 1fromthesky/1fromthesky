@@ -1,13 +1,12 @@
 .pagination {
-   position: absolute;
+   position: fixed;
    display: block;
    top: 50%;
-   right: -10px;
+   right: 50px;
    z-index: 100;
 }
 
 .pagination__list {
-   position: fixed;
    transform: translateY(-50%);
 
 }

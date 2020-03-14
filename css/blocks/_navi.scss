@@ -1,12 +1,12 @@
 $itemMargin: 15px;
 
-.menu__list {
+.navi__list {
    display: flex;
    align-items: center;
    margin: 0px 10px;
 }
 
-.menu__item {
+.navi__item {
    display: flex;
    align-items: center;
    &::before {
@@ -25,7 +25,7 @@ $itemMargin: 15px;
    }
 }
 
-.menu__link {
+.navi__link {
    text-transform: uppercase;
    white-space: nowrap;
    margin-left: $itemMargin;

@@ -502,6 +502,7 @@ ul li {
 }
 
 button {
+  color: inherit;
   border: none;
   outline: none;
   cursor: pointer;
@@ -519,6 +520,10 @@ img {
 footer {
   position: relative;
   width: 100%;
+}
+
+p {
+  line-height: 1.7;
 }
 
 .wrapper {
@@ -541,10 +546,6 @@ footer {
 }
 .container_justify-center {
   justify-content: center;
-}
-
-p {
-  line-height: 1.7;
 }
 
 .slide {
@@ -580,27 +581,27 @@ p {
   margin: 0;
 }
 
-.performance {
-  background: url("/img/performance/texture.png"), url("/img/performance/salat.jpg") center center/cover;
+.hero {
+  background: url("/img/hero/texture.png"), url("/img/hero/salat.jpg") center center/cover;
   color: #ffffff;
 }
-.performance__subtitle {
+.hero__subtitle {
   font-family: "lifehack", Arial, sans-serif;
   font-size: 65px;
   line-height: 1.2;
 }
 
-.menu__list {
+.navi__list {
   display: flex;
   align-items: center;
   margin: 0px 10px;
 }
 
-.menu__item {
+.navi__item {
   display: flex;
   align-items: center;
 }
-.menu__item::before {
+.navi__item::before {
   content: "";
   display: block;
   width: 4px;
@@ -609,11 +610,11 @@ p {
   background: currentColor;
   margin-left: 15px;
 }
-.menu__item:first-child:before {
+.navi__item:first-child:before {
   display: none;
 }
 
-.menu__link {
+.navi__link {
   text-transform: uppercase;
   white-space: nowrap;
   margin-left: 15px;
@@ -655,21 +656,55 @@ p {
   border: 2px solid #f9b43b;
 }
 
+.btn-wrap {
+  width: 25px;
+  height: 20px;
+  margin-left: 20px;
+}
+
+.btn-burger {
+  height: 4px;
+  width: 25px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.btn-burger::before {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 25px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  position: absolute;
+  top: 200%;
+}
+.btn-burger::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 25px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  position: absolute;
+  top: -200%;
+}
+
 .pagination {
   position: fixed;
-  display: block;
   top: 50%;
   right: 50px;
   z-index: 100;
-}
-
-.pagination__list {
   transform: translateY(-50%);
 }
-
 .pagination__item {
   margin-bottom: 15px;
   position: relative;
+}
+.pagination__item:last-child {
+  margin-bottom: 0;
 }
 .pagination__item-active::before {
   content: "";
@@ -683,12 +718,15 @@ p {
   border: 1px solid #fff;
   border-radius: 50%;
 }
-
 .pagination__link {
-  background: #fff;
-  width: 6px;
-  height: 6px;
+  background: #ffffff;
+  width: 7px;
+  height: 7px;
+  border: 1px solid rgba(47, 50, 52, 0.5);
   border-radius: 50%;
+}
+.pagination__link:hover {
+  background: #ccc;
 }
 
 .preview {
@@ -720,23 +758,26 @@ p {
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  width: 32px;
-  height: 32px;
-  background: url("/img/performance/arrow-scroll.png") center center/contain no-repeat;
+}
+.mover__svg {
+  display: block;
+  width: 30px;
+  height: 15px;
+  fill: #ffffff;
 }
 
-.kitchen {
-  background: url("/img/kitchen/best_bg.jpg") center center/cover no-repeat;
+.features {
+  background: url("/img/features/best_bg.jpg") center center/cover no-repeat;
   font-family: "ubuntu", Arial, sans-serif;
   font-weight: 300;
   color: #2f3234;
   font-size: 14px;
 }
-.kitchen__list {
+.features__list {
   display: flex;
   justify-content: space-between;
 }
-.kitchen__item {
+.features__item {
   width: calc(100% / 3 - 26px);
 }
 
@@ -938,14 +979,28 @@ p {
 .carte__item {
   display: flex;
 }
+.carte__item_active .carte__title {
+  color: #f9b43b;
+}
 .carte__item_active .carte__content {
-  min-width: 600px;
+  width: 600px;
   overflow: visible;
 }
 .carte__link {
+  position: relative;
   display: flex;
   align-items: flex-end;
   padding: 1em;
+}
+.carte__link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: rgba(47, 50, 52, 0.6);
 }
 .carte__link_meat {
   background: url("/img/carte/menu_pic2.jpg") center/cover no-repeat;
@@ -958,7 +1013,7 @@ p {
 }
 .carte__title {
   font-family: "gagalin", Arial, sans-serif;
-  font-size: 3em;
+  font-size: 40px;
   transform: rotate(180deg);
   writing-mode: vertical-lr;
   margin-bottom: 40px;
@@ -969,7 +1024,9 @@ p {
   overflow: hidden;
 }
 .carte__content p {
-  padding: 50px 30px;
+  display: block;
+  width: 600px;
+  padding: 50px 80px 50px 30px;
 }
 
 .form {
@@ -1078,10 +1135,41 @@ p {
   background: url("/img/map/bgmap.jpg") center center/cover no-repeat;
 }
 
+.contacts {
+  width: 50%;
+}
+.contacts .contacts__phone {
+  display: inline-block;
+  color: #e35028;
+  font-weight: 500;
+}
+.contacts .contacts__phone:hover {
+  transition: 0.3s;
+  color: rgba(227, 80, 40, 0.7);
+}
+
+.social {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+.social__item {
+  margin-right: 20px;
+}
+.social__item:last-child {
+  margin-right: 0;
+}
+.social__link {
+  display: flex;
+}
 .social__svg {
-  width: 30px;
-  height: 30px;
-  fill: #fff;
+  width: 20px;
+  height: 20px;
+  fill: #5a5a5a;
+}
+.social__svg:hover {
+  fill: #ffffff;
+  transition: 0.3s;
 }
 
 .presentation {
@@ -1094,14 +1182,7 @@ p {
   position: absolute;
   bottom: 0;
 }
-
-.phone {
-  width: 50%;
-  color: #e45028;
-  font-weight: 500;
-}
-
-.social {
-  width: 50%;
-  text-align: right;
+.footer__container {
+  display: flex;
+  align-items: center;
 }

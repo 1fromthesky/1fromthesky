@@ -125,6 +125,7 @@ ul {
 }
 
 button {
+   color: inherit;
    border: none;
    outline: none;
    cursor: pointer;
@@ -144,6 +145,10 @@ footer {
    width: 100%;
 }
 
+p {
+   line-height: 1.7;
+}
+
 
 .wrapper {
    position: relative;
@@ -157,7 +162,7 @@ footer {
    height: 100%;
    max-width: 940px;
    margin: 0px auto;
-   // padding: 0px 10px; max-width: 960px;???
+   // ?padding: 0px 10px; max-width: 960px;
    position: relative;
 
    &_flex-column {
@@ -168,8 +173,4 @@ footer {
    &_justify-center {
       justify-content: center;
    }
-}
-
-p {
-   line-height: 1.7;
 }

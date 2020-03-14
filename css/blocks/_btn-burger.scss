@@ -1,0 +1,38 @@
+.btn-wrap {
+   width: 25px;
+   height: 20px;
+   margin-left: 20px;
+   
+}
+
+.btn-burger {
+   height: 4px;
+   width: 25px;
+   background-color: $white;
+   border-radius: 4px;
+   position: relative;
+   top: 50%;
+   transform: translateY(-50%);
+   
+
+   &::before {
+      content: '';
+      display: block;
+      height: 4px;
+      width: 25px;
+      background-color: $white;
+      border-radius: 4px;
+      position: absolute;
+      top: 200%;
+   }
+   &::after {
+      content: '';
+      display: block;
+      height: 4px;
+      width: 25px;
+      background-color: $white;
+      border-radius: 4px;
+      position: absolute;
+      top: -200%;
+   }
+}

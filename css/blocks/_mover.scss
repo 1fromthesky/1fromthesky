@@ -3,7 +3,12 @@
    bottom: 40px;
    left: 50%;
    transform: translateX(-50%);
-   width: 32px;
-   height: 32px;
-   background: url('/img/performance/arrow-scroll.png') center center / contain no-repeat;
+   
+
+   &__svg {
+      display: block;
+      width: 30px;
+      height: 15px;
+      fill: $white;
+   }
 }

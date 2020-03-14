@@ -1,0 +1,14 @@
+.contacts {
+   width: 50%;
+
+   .contacts__phone {
+      display: inline-block;
+      color: $red;
+      font-weight: 500;
+
+      &:hover {
+         transition: .3s;
+         color: rgba($red, .7);
+      }  
+   }
+}

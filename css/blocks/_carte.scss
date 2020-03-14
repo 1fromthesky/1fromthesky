@@ -19,17 +19,34 @@
       display: flex;
 
       &_active {
+         
+         .carte__title {
+            color: $yellow;
+         }
+
          .carte__content {
-            min-width: 600px;
+            width: 600px;
             overflow: visible;
          }
       }
    }
 
    &__link {
+      position: relative;
       display: flex;
       align-items: flex-end;
       padding: 1em;
+
+      &::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         margin: 0 auto;
+         background-color: rgba($black, .6);
+      }
 
       &_meat {
          background: url('/img/carte/menu_pic2.jpg') center / cover no-repeat;
@@ -46,7 +63,7 @@
 
    &__title {
       @include gagalin();
-      font-size: 3em;
+      font-size: 40px;
       transform: rotate(180deg);
       writing-mode: vertical-lr;
       margin-bottom: 40px;
@@ -58,7 +75,9 @@
       overflow: hidden;
 
       p {
-         padding: 50px 30px;
+         display: block;
+         width: 600px;
+         padding: 50px 80px 50px 30px;
       }
    }
 }

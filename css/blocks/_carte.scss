@@ -3,8 +3,8 @@
 
    &__wrap-title {
       position: relative;
-      left: 100px;
-      top: 150px;
+      left: rem(100px);
+      top: rem(150px);
    }
 
    &__list {
@@ -25,7 +25,7 @@
          }
 
          .carte__content {
-            width: 600px;
+            width: rem(600px);
             overflow: visible;
          }
       }
@@ -63,10 +63,10 @@
 
    &__title {
       @include gagalin();
-      font-size: 40px;
+      font-size: rem(40px);
       transform: rotate(180deg);
       writing-mode: vertical-lr;
-      margin-bottom: 40px;
+      margin-bottom: rem(40px);
    }
 
    &__content {
@@ -76,8 +76,8 @@
 
       p {
          display: block;
-         width: 600px;
-         padding: 50px 80px 50px 30px;
+         width: rem(600px);
+         padding: rem(50px) rem(80px) rem(50px) rem(30px);
       }
    }
 }

@@ -1,20 +1,36 @@
 .feature {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
    text-align: center;
    
+   @include phones {
+      flex-direction: row;
+   }
+
    &__subtitle {
-      margin: 34px 0px 10px;
+      margin: rem(34px) rem(0px) rem(10px);
       line-height: 1.2;
       @include lifehack();
-      font-size: 24px;
+      font-size: rem(24px);
+
+      @include phones {
+         margin-top: 0;
+      }
    }
 
    &__icon {
-      height: 100px;
-      display: flex;
-      justify-content: center;
+      height: rem(100px);
+   }
+
+   &__text {
+      @include phones {
+         text-align: left;
+         margin-left: 5%;
+      }
    }
 
    p {
-      color: rgba($black, 0.8);
+      color: $black;
    }
 }

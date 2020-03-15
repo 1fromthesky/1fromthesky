@@ -7,6 +7,12 @@
    height: 100%;
 }
 .feedback__item {
-   width: calc(100% / 4);
+   width: 25%;
    height: 50%;
+   position: relative;
+
+   @include tablets {
+      width: 50%;
+      height: 25%;
+   }
 }

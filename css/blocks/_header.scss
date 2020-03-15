@@ -1,12 +1,17 @@
 .header {
-   padding: 12px 0px;
+   padding: rem(12px) rem(0px);
    display: flex;
    align-items: center;
    justify-content: space-between;
    @include ubuntu(regular);
-   font-size: 13px;
+   font-size: rem(13px);
 
    &__btns {
+      display: flex;
+      align-items: center;
+   }
+
+   &__links {
       display: flex;
       align-items: center;
    }

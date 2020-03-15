@@ -4,9 +4,14 @@ $gray: #5a5a5a;
    display: flex;
    justify-content: flex-end;
    width: 50%;
+
+   @include phones {
+      justify-content: center;
+      width: auto;
+   }
    
    &__item {
-      margin-right: 20px;
+      margin-right: rem(20px);
 
       &:last-child {
          margin-right: 0;
@@ -18,8 +23,8 @@ $gray: #5a5a5a;
    }
 
    &__svg {
-      width: 20px;
-      height: 20px;
+      width: rem(20px);
+      height: rem(20px);
       fill: $gray;
 
       &:hover {

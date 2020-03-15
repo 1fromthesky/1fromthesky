@@ -1,21 +1,33 @@
 .btn {
    @include ubuntu(medium);
    text-transform: uppercase;
-   font-size: 13px;
+   font-size: rem(13px);
    background: $red;
-   padding: 10px 16px;
-   border-radius: 5px;
+   padding: rem(10px) rem(16px);
+   border-radius: rem(5px);
    line-height: 1;
-   display: inline-block;
-   border: 2px solid transparent;
+   display: inline-flex;
+   border: rem(2px) solid transparent;
    outline: none;
 
    &_cancel {
       background: none;
       @include ubuntu(light);
+
+      &:hover.btn {
+         background: transparent;
+         background: rgba($yellow, .2);
+         transition: .2s;
+      }
    }
 
    &:focus {
-      border: 2px solid $yellow;
+      border: rem(2px) solid $yellow;
+   }
+
+   &:hover {
+      background: $yellow;
+      // color: $black;
+      transition: .2s;
    }
 }

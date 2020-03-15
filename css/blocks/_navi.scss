@@ -1,9 +1,15 @@
-$itemMargin: 15px;
+$itemMargin: rem(12px);
+
+.navi {
+   @include tablets {
+      display: none;
+   }
+}
 
 .navi__list {
    display: flex;
    align-items: center;
-   margin: 0px 10px;
+   margin: rem(0px) rem(10px);
 }
 
 .navi__item {
@@ -12,8 +18,8 @@ $itemMargin: 15px;
    &::before {
       content: '';
       display: block;
-      width: 4px;
-      height: 4px;
+      width: rem(4px);
+      height: rem(4px);
       border-radius: 50%;
       background: currentColor;
       margin-left: $itemMargin;

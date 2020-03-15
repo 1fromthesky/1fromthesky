@@ -1,3 +1,15 @@
+html {
+   font-size: 16px;
+
+   @include tablets {
+      font-size: 15px;
+   }
+
+   @include phones {
+      font-size: 14px;
+   }
+}
+
 html,
 body {
    width: 100%;
@@ -5,8 +17,10 @@ body {
 }
 
 body {
-   background: #ffffff;
-   font: 300 14px/1.42 'ubuntu', Arial, sans-serif;
+   background: $white;
+   @include ubuntu(light);
+   font-size: 14px;
+   // font: 300 14px/1.42 'ubuntu', Arial, sans-serif;
    color: $white;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
@@ -137,7 +151,7 @@ address {
 
 img {
    display: block;
-   max-width: 100%;
+   // max-width: 100%;
 }
 
 footer {
@@ -146,7 +160,7 @@ footer {
 }
 
 p {
-   line-height: 1.7;
+   line-height: 1.6;
 }
 
 
@@ -154,15 +168,16 @@ p {
    position: relative;
    overflow: hidden;
    width: 100%;
-   min-width: 940px + 20px;
    min-height: 100%;
 }
 
 .container {
    height: 100%;
+   width: 95%;
    max-width: 940px;
+   // !rem not work
    margin: 0px auto;
-   // ?padding: 0px 10px; max-width: 960px;
+   // ?padding: rem(0px) rem(10px); max-width: rem(960px);
    position: relative;
 
    &_flex-column {

@@ -5,20 +5,20 @@
    justify-content: flex-end;
 
    &__content {
-      background-color: rgba(47, 50, 52, .9);
+      background-color: rgba($black, .9);
       position: absolute;
       width: 50%;
       height: 100%;
-      padding-left: 95px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
-   }
+      padding: 5% 2% 0 7%;
 
-   &__book {
-      width: calc(960px / 2 - 110px);
+      @include tablets {
+         width: 100%;
+         text-align: center;
+         // padding-left: 0;
+      }
    }
-
 }
 

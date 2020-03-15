@@ -1,32 +1,99 @@
-.card-member {
+.card-member__item {
+   margin-bottom: rem(35px);
+
+   &:last-child {
+      margin-bottom: 0;
+   }
+
+   @include tablets {
+      display: flex;
+      flex-direction: column;
+   }
+}
+
+.card-member__link {
+   display: inline-block;
+   @include gagalin();
+   font-size: rem(14px);
+   color: $white;
+
+   &::before {
+      content: '';
+      display: inline-block;
+      border: rem(7px) solid transparent;
+      border-left-width: rem(5px);
+      border-right-width: rem(5px);
+      border-top-color: $yellow;
+      border-bottom: none;
+      margin-right: rem(10px);
+   }
+}
+
+.card-member__item-activ {
+   .card-member__trigger {
+      height: 100%;
+      overflow: visible;
+   }
+
+   .card-member__link {
+      color: $yellow;
+
+      &::before {
+         content: '';
+         display: inline-block;
+         border: rem(7px) solid transparent;
+         border-left-width: rem(5px);
+         border-right-width: rem(5px);
+         border-bottom-color: $yellow;
+         border-top: none;
+         margin-right: rem(10px);
+      }
+   }
+}
+
+.card-member__trigger {
    display: flex;
    height: 0;
    overflow: hidden;
-   padding-top: 15px;
+   padding-top: rem(15px);
 
-   &__img-wrap {
-      overflow: hidden;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-left: 15px;
-   }
-
-   &__img {
-      object-fit: cover;
-      height: 100%;
+   @include tablets {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 18%;
    }
 }
 
 .card-member__text {
-   padding: 0 20px;
+   padding: 0 rem(20px);
+
+   @include tablets {
+      padding: 0;
+   }
 
    span {
       @include ubuntu(bold);
    }
 
    p {
-      margin-top: 15px;
+      margin-top: rem(15px);
    }
+}
+
+.card-member__img-wrap {
+   overflow: hidden;
+   width: rem(100px);
+   height: rem(100px);
+   border-radius: 50%;
+   flex-shrink: 0;
+   margin-left: rem(15px);
+
+   @include tablets {
+      margin: 15px 0;
+   }
+}
+
+.card-member__img {
+   object-fit: cover;
+   height: 100%;
 }

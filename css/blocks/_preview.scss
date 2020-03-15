@@ -1,29 +1,67 @@
 .preview {
    display: flex;
    align-items: center;
+   justify-content: center;
    flex: 0.8;
+
+   @include tablets {
+      flex-direction: column;
+      padding: 0 15%;
+   }
+
+   // @include phones {
+   //    padding: 0;
+   // }
    
    &__img {
-      flex: 1;
+      width: 50%;
 
-      &__img-elem {
+      @include tablets {
+         width: auto;
+      }
+
+      &-elem {
          max-width: 100%;
          height: auto;
       }
    }
 
    &__text {
-      flex: 1;
+      width: 48%;
 
+      @include tablets {
+         width: auto;
+         text-align: center;
+      }
+      
       &_padding-top {
-         padding-top: 100px;
+         padding-top: rem(100px);
+
+         @include tablets {
+            padding-top: rem(20px);
+         }
+      }
+   }
+
+   &__subtitle {
+      @include lifehack();
+      font-size: rem(65px);
+      line-height: 1.2;
+      text-transform: lowercase;
+
+      @include tablets {
+         text-align: center;
+      }
+
+      @include phones {
+         font-size: rem(48px);
       }
    }
 
    &__pricetag {
       display: flex;
       align-items: flex-end;
-      margin-top: 10px;
+      margin-top: rem(10px);
    }
 }
 

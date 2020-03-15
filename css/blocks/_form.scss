@@ -2,18 +2,32 @@
    display: flex;
    justify-content: space-between;
 
+   @include tablets {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 15%;
+   }
+
+   @include tablets {
+      padding: 0 10%;
+   }
+
    &__col {
       width: calc(50% - 10px);
+
+      @include tablets {
+         width: 100%;
+      }
    }
 
    &__row {
       display: flex;
       flex-wrap: wrap;
-      margin-bottom: 15px;
+      margin-bottom: rem(15px);
    }
 
    &__label {
-      margin-right: 20px;
+      margin-right: rem(20px);
       flex: 1;
 
       &:last-child {
@@ -23,19 +37,19 @@
 
    &__input {
       width: 100%;
-      padding: 9px 20px;
-      border-radius: 5px;
+      padding: rem(9px) rem(20px);
+      border-radius: rem(5px);
       outline: transparent;
-      border: 2px solid transparent;
-      margin-top: 5px;
+      border: rem(2px) solid transparent;
+      margin-top: rem(5px);
 
       &:focus {
-         border: 2px solid $yellow;
+         border: rem(2px) solid $yellow;
       }
    }
 
    &__textarea {
-      min-height: 113px;
+      min-height: rem(113px);
    }
 
 
@@ -43,7 +57,8 @@
       display: flex;
       align-items: center;
       flex-shrink: 0;
-      margin-right: 20px;
+      margin-right: rem(20px);
+      margin-bottom: rem(15px);
 
       &:last-child {
          margin-right: 0;
@@ -52,16 +67,16 @@
 
    &__input-radio {
       position: absolute;
-      width: 1px;
-      height: 1px;
+      width: rem(1px);
+      height: rem(1px);
       clip: rect(0 0 0 0);
       overflow: hidden;
 
       &:checked+.form__input-style::before {
          content: '';
          display: block;
-         width: 7px;
-         height: 7px;
+         width: rem(7px);
+         height: rem(7px);
          border-radius: 50%;
          background: $orange;
          position: absolute;
@@ -73,10 +88,10 @@
       &:focus+.form__input-style::after {
          content: '';
          display: block;
-         width: 15px;
-         height: 15px;
+         width: rem(15px);
+         height: rem(15px);
          border-radius: 50%;
-         border: 2px solid $yellow;
+         border: rem(2px) solid $yellow;
          position: absolute;
          top: 50%;
          left: 50%;
@@ -86,9 +101,9 @@
       &:focus+.form__checkbox-style::after {
          content: '';
          display: block;
-         width: 14px;
-         height: 14px;
-         border: 2px solid $yellow;
+         width: rem(14px);
+         height: rem(14px);
+         border: rem(2px) solid $yellow;
          position: absolute;
          top: 50%;
          left: 50%;
@@ -98,9 +113,9 @@
 
    &__input-style {
       display: block;
-      margin-right: 10px;
-      width: 16px;
-      height: 16px;
+      margin-right: rem(10px);
+      width: rem(16px);
+      height: rem(16px);
       border-radius: 50%;
       background: $white;
       position: relative;
@@ -109,9 +124,9 @@
    &__checkbox-style {
       display: block;
       position: relative;
-      width: 16px;
-      height: 16px;
+      width: rem(16px);
+      height: rem(16px);
       background: $white;
-      margin-right: 10px;
+      margin-right: rem(10px);
    }
 }

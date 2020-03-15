@@ -1,14 +1,14 @@
 .mover {
    position: absolute;
-   bottom: 40px;
+   bottom: rem(40px);
    left: 50%;
    transform: translateX(-50%);
    
 
    &__svg {
       display: block;
-      width: 30px;
-      height: 15px;
+      width: rem(30px);
+      height: rem(15px);
       fill: $white;
    }
 }

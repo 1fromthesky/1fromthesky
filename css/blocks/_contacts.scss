@@ -1,6 +1,11 @@
 .contacts {
    width: 50%;
 
+   @include phones {
+      margin-bottom: rem(15px);
+      width: auto;
+   }
+
    .contacts__phone {
       display: inline-block;
       color: $red;
@@ -10,5 +15,9 @@
          transition: .3s;
          color: rgba($red, .7);
       }  
+   }
+
+   &__address {
+      margin-bottom: 5px;
    }
 }

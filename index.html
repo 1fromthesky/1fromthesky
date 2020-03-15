@@ -15,12 +15,12 @@
       <section class="slide hero">
          <div class="container container_flex-column">
             <header class="header">
-               <a href="logo">
+               <a href="#" class="logo">
                   <!-- <svg class="logo__svg">
                      <use xlink:href='./img/icons-svg/sprite-social.svg#logo'></use>
                   </svg> -->
                   <!-- !img or svg -->
-                  <img src="./img/hero/logo.svg" alt="MrBurger" class="logo-img">
+                  <img src="./img/hero/logo.svg" alt="MrBurger" class="logo__img">
                </a>
                <div class="header__btns">
                   <nav class="navi">
@@ -48,11 +48,12 @@
                         </li>
                      </ul>
                   </nav>
-                  <a href="#" class="btn">Заказать</a>
-                  <!-- <a href="#" class="btn-wrap">
-                     <div class="btn-burger"></div>
-                     !btn-burger
-                  </a> -->
+                  <div class="header__links">
+                     <a href="#" class="btn">Заказать</a>
+                     <a href="#" class="btn-navi-link">
+                        <div class="btn__burger"></div>
+                     </a>
+                  </div>
                </div>
             </header>
             <section class="preview">
@@ -61,7 +62,7 @@
                </div>
                <div class="preview__text preview__text_padding-top">
                   <h2 class="slide__title">Мы делаем</h2>
-                  <h3 class="hero__subtitle">Натуральные бургеры</h3>
+                  <h3 class="preview__subtitle">Натуральные бургеры</h3>
                </div>
             </section>
             <a href="#" class="mover">
@@ -81,25 +82,31 @@
                   <div class="feature__icon">
                      <img src="/img/features/meat.svg" alt="meat" class="feature__icon-elem">
                   </div>
-                  <h3 class="feature__subtitle">100% свежее мясо</h3>
-                  <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.
-                  </p>
+                  <div class="feature__text">
+                     <h3 class="feature__subtitle">100% свежее мясо</h3>
+                     <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.
+                     </p>
+                  </div>
                </li>
                <li class="features__item feature">
                   <div class="feature__icon">
                      <img src="/img/features/hand.svg" alt="hend" class="feature__icon-elem">
                   </div>
-                  <h3 class="feature__subtitle">100% свежее мясо</h3>
-                  <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.
-                  </p>
+                  <div class="feature__text">
+                     <h3 class="feature__subtitle">100% свежее мясо</h3>
+                     <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.
+                     </p>
+                  </div>
                </li>
                <li class="features__item feature">
                   <div class="feature__icon">
                      <img src="/img/features/natural.svg" alt="natural" class="feature__icon-elem">
                   </div>
-                  <h3 class="feature__subtitle">100% свежее мясо</h3>
-                  <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.
-                  </p>
+                  <div class="feature__text">
+                     <h3 class="feature__subtitle">100% свежее мясо</h3>
+                     <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.
+                     </p>
+                  </div>
                </li>
             </ul>
          </div>
@@ -129,10 +136,10 @@
          <div class="crew__content">
             <div class="crew__book">
                <h2 class="slide__title">Команда</h2>
-               <ul class="crew__list accordeon">
-                  <li class="accordeon__item">
-                     <a href="#" class="accordeon__link">Ричард Джеймс</a>
-                     <article class="card-member">
+               <ul class="card-member">
+                  <li class="card-member__item">
+                     <a href="#" class="card-member__link">Дэниэл Редклиф</a>
+                     <article class="card-member__trigger">
                         <div class="card-member__img-wrap">
                            <img class="card-member__img" src="/img/crew/member.jpg" alt="member">
                         </div>
@@ -142,9 +149,9 @@
                         </div>
                      </article>
                   </li>
-                  <li class="accordeon__item accordeon__item-activ">
-                     <a href="#" class="accordeon__link">Ричард Джеймс</a>
-                     <article class="card-member">
+                  <li class="card-member__item card-member__item-activ">
+                     <a href="#" class="card-member__link">Ричард Джеймс</a>
+                     <article class="card-member__trigger">
                         <div class="card-member__img-wrap">
                            <img class="card-member__img" src="/img/crew/member.jpg" alt="member">
                         </div>
@@ -154,9 +161,9 @@
                         </div>
                      </article>
                   </li>
-                  <li class="accordeon__item">
-                     <a href="#" class="accordeon__link">Ричард Джеймс</a>
-                     <article class="card-member">
+                  <li class="card-member__item">
+                     <a href="#" class="card-member__link">Джейк Финн</a>
+                     <article class="card-member__trigger">
                         <div class="card-member__img-wrap">
                            <img class="card-member__img" src="/img/crew/member.jpg" alt="member">
                         </div>
@@ -166,9 +173,9 @@
                         </div>
                      </article>
                   </li>
-                  <li class="accordeon__item">
-                     <a href="#" class="accordeon__link">Ричард Джеймс</a>
-                     <article class="card-member">
+                  <li class="card-member__item">
+                     <a href="#" class="card-member__link">Ричард Джеймс</a>
+                     <article class="card-member__trigger">
                         <div class="card-member__img-wrap">
                            <img class="card-member__img" src="/img/crew/member.jpg" alt="member">
                         </div>
@@ -327,7 +334,7 @@
                         <input type="text" class="form__input">
                      </label class="form__label">
                   </div>
-                  <div class="form__row">
+                  <div class="form__row form__row_nowrap">
                      <label class="form__label">
                         <div class="form__title">Дом</div>
                         <input type="text" class="form__input">
@@ -372,8 +379,8 @@
                         <div class="form__title">Не перезванивать</div>
                      </label>
                   </div>
-                  <a href="#" class="btn">Заказать</a>
-                  <a href="#" class="btn btn_cancel">Очистить</a>
+                  <button href="#" class="btn">Заказать</button>
+                  <button href="#" class="btn btn_cancel">Очистить</button>
                </div>
             </form>
          </div>
@@ -386,7 +393,7 @@
          <div class="container footer__container">
             <!-- !footer__container??? -->
             <div class="contacts">
-               <address class="address">Санкт-Петербург, ул.Бабушкина, д.12/1, 15</address>
+               <address class="contacts__address">Санкт-Петербург, ул.Бабушкина, д.12/1, 15</address>
                <a href="tel:+78123771377" class="contacts__phone">+7 (812) 377-13-77</a>
             </div>
             <ul class="social">

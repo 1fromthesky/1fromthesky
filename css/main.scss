@@ -7,6 +7,7 @@ $white: #ffffff;
 
 // setups
 @import './_misc/normalize';
+@import './_misc/media';
 @import './_misc/mixins';
 @import './_misc/fonts';
 @import './_misc/layout';
@@ -29,7 +30,6 @@ $white: #ffffff;
 @import './blocks/review';
 @import './blocks/crew';
 @import './blocks/card-member';
-@import './blocks/accordeon';
 @import './blocks/order';
 @import './blocks/carte';
 @import './blocks/form';

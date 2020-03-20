@@ -33,6 +33,7 @@
          .carte__content {
             width: 530px;
             padding: 10% 5%;
+            line-height: 1rem;
 
             @include tablets {
                width: 100%;
@@ -42,11 +43,14 @@
          }
       }
    }
-
+// ??? непонятно с размерами link 
+// ???(по разному масштабируются одни и тежже элементы)
    &__link {
+      min-width: rem(70px);
       position: relative;
       display: flex;
-      padding: 1em;
+      align-items: flex-end;
+      justify-content: center;
 
       &::before {
          content: '';
@@ -73,11 +77,20 @@
    }
 
    &__title {
+      line-height: 1;
       @include gagalin();
       font-size: rem(40px);
       transform: rotate(180deg);
       writing-mode: vertical-lr;
-      margin-bottom: rem(40px);
+      padding-top: 30px;
+
+      @include tablets {
+         font-size: rem(36px);
+      }
+
+      @include phones {
+         font-size: rem(30px);
+      }
    }
 
    &__content {

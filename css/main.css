@@ -1116,12 +1116,6 @@ p {
 .card-member__item:last-child {
   margin-bottom: 0;
 }
-@media screen and (max-width: 768px) {
-  .card-member__item {
-    display: flex;
-    flex-direction: column;
-  }
-}
 
 .card-member__link {
   display: inline-block;
@@ -1242,6 +1236,7 @@ p {
 .carte__item_active .carte__content {
   width: 530px;
   padding: 10% 5%;
+  line-height: 1rem;
 }
 @media screen and (max-width: 768px) {
   .carte__item_active .carte__content {
@@ -1251,9 +1246,11 @@ p {
   }
 }
 .carte__link {
+  min-width: 4.375rem;
   position: relative;
   display: flex;
-  padding: 1em;
+  align-items: flex-end;
+  justify-content: center;
 }
 .carte__link::before {
   content: "";
@@ -1275,11 +1272,22 @@ p {
   background: url("/img/carte/menu_pic4.jpg") center/cover no-repeat;
 }
 .carte__title {
+  line-height: 1;
   font-family: "gagalin", Arial, sans-serif;
   font-size: 2.5rem;
   transform: rotate(180deg);
   writing-mode: vertical-lr;
-  margin-bottom: 2.5rem;
+  padding-top: 30px;
+}
+@media screen and (max-width: 768px) {
+  .carte__title {
+    font-size: 2.25rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .carte__title {
+    font-size: 1.875rem;
+  }
 }
 .carte__content {
   width: 0;

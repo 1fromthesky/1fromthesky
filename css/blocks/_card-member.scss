@@ -4,11 +4,6 @@
    &:last-child {
       margin-bottom: 0;
    }
-
-   @include tablets {
-      display: flex;
-      flex-direction: column;
-   }
 }
 
 .card-member__link {

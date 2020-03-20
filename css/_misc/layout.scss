@@ -12,15 +12,13 @@ html {
 
 html,
 body {
-   width: 100%;
    height: 100%;
 }
 
 body {
    background: $white;
+   font-size: rem(14px);
    @include ubuntu(light);
-   font-size: 14px;
-   // font: 300 14px/1.42 'ubuntu', Arial, sans-serif;
    color: $white;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
@@ -172,13 +170,13 @@ p {
 }
 
 .container {
+   margin: 0px auto;
    height: 100%;
    width: 95%;
-   max-width: 940px;
-   // !rem not work
-   margin: 0px auto;
-   // ?padding: rem(0px) rem(10px); max-width: rem(960px);
+   max-width: rem(940px);
    position: relative;
+   // !rem not work
+   // ?padding: rem(0px) rem(10px); max-width: rem(960px);
 
    &_flex-column {
       display: flex;

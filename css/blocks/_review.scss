@@ -1,6 +1,7 @@
 .review {
    position: relative;
    filter: grayscale(100%);
+   background: $black;
    transition: .3s;
 
    &__img-bg {
@@ -32,12 +33,11 @@
    }
 
    &:hover {
-      filter: grayscale(0);
-      
 
       .review__about {
          opacity: 1;
          transform: scale(1);
+         background: rgba($black, .5);
       }
    }
 

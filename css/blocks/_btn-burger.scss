@@ -1,19 +1,19 @@
 .btn-navi-link {
    position: relative;
    align-items: center;
-   vertical-align: middle;
+   // vertical-align: middle;
    height: rem(25px);
    margin: 0 rem(30px);
-   transition: .2s;
-   
+   transition: .1s;
+
    display: none;
    @include tablets {
       display: flex;
    }
 
    &:hover {
-      transform: rotate(90deg);
-      transition: .2s;
+      transform: rotate(180deg);
+      transition: .1s;
    }
 }
 

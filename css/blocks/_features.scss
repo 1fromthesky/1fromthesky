@@ -4,6 +4,15 @@
    color: $black;
    // font-size: rem(14px);
    
+   &__title {
+      color: $black;
+      text-align: center;
+
+      @include phones {
+      font-size: rem(40px);
+      }
+   }
+
    &__list {
       display: flex;
       justify-content: space-between;
@@ -11,6 +20,7 @@
       @include phones {
          flex-direction: column;
       }
+
    }
 
    &__item {
@@ -19,9 +29,9 @@
 
       @include phones {
          display: flex;
-         align-items: center;
-         width: 100%;
          padding: 0 5%;
+         width: 100%;
+         margin-bottom: rem(20px);
       }
    }
 }

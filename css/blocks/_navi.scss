@@ -1,20 +1,24 @@
 $itemMargin: rem(12px);
 
 .navi {
-   @include tablets {
+
+   @include navi-menu {
       display: none;
-   }
+  }
 }
+
+
 
 .navi__list {
    display: flex;
    align-items: center;
-   margin: rem(0px) rem(10px);
 }
 
 .navi__item {
    display: flex;
    align-items: center;
+   margin-right: $itemMargin;
+
    &::before {
       content: '';
       display: block;
@@ -22,8 +26,8 @@ $itemMargin: rem(12px);
       height: rem(4px);
       border-radius: 50%;
       background: currentColor;
-      margin-left: $itemMargin;
    }
+
    &:first-child {
       &:before {
          display: none;
@@ -35,4 +39,8 @@ $itemMargin: rem(12px);
    text-transform: uppercase;
    white-space: nowrap;
    margin-left: $itemMargin;
+
+   &:hover {
+      color: $yellow;
+   }
 }

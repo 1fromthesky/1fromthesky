@@ -2,9 +2,14 @@
    background: url(/img/carte/menu_pic.jpg) center center / cover no-repeat;
 
    &__wrap-title {
+      display: inline-flex;
       position: relative;
       left: rem(100px);
       top: rem(150px);
+   }
+
+   &_title {
+      color: $white;
    }
 
    &__list {
@@ -19,14 +24,21 @@
       display: flex;
 
       &_active {
-         
+         background: rgba($black, .8);
+
          .carte__title {
             color: $yellow;
          }
 
          .carte__content {
-            width: rem(600px);
-            overflow: visible;
+            width: 530px;
+            padding: 10% 5%;
+
+            @include tablets {
+               width: 100%;
+               padding: 10% 5%;
+               font-size: rem(12px);
+            }  
          }
       }
    }
@@ -34,7 +46,6 @@
    &__link {
       position: relative;
       display: flex;
-      align-items: flex-end;
       padding: 1em;
 
       &::before {
@@ -70,15 +81,8 @@
    }
 
    &__content {
-      background: rgba($black, .8);
       width: 0;
       overflow: hidden;
-
-      p {
-         display: block;
-         width: rem(600px);
-         padding: rem(50px) rem(80px) rem(50px) rem(30px);
-      }
    }
 }
 

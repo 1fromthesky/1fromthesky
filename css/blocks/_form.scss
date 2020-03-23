@@ -37,6 +37,7 @@
 
    &__input {
       width: 100%;
+      color: $black;
       padding: rem(9px) rem(20px);
       border-radius: rem(5px);
       outline: transparent;
@@ -112,7 +113,7 @@
 
       &:checked+.form__checkbox-style::after {
          content: '';
-         background: url('../../img/form/flag.png') center / contain no-repeat;
+         background: url('../../img/form/flag.svg') center / contain no-repeat;
          display: block;
          width: rem(14px);
          height: rem(14px);

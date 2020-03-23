@@ -68,13 +68,11 @@
          }
 
          .btn-navi-link {
-            top: 27px;
+            top: 25px;
          }
 
          .btn__burger {
-            &{
-               background: transparent;
-            }
+            background: transparent;
 
             &::before {
                transform: rotate(45deg);

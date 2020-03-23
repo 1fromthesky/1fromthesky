@@ -1,14 +1,43 @@
 .mover {
-   position: absolute;
-   bottom: rem(40px);
-   left: 50%;
-   transform: translateX(-50%);
-   
+   display: flex;
+   align-items: center;
 
    &__svg {
       display: block;
       width: rem(30px);
-      height: rem(15px);
+      height: rem(17px);
       fill: $white;
+   }
+
+   &_hero {
+      position: absolute;
+      bottom: rem(40px);
+      left: 50%;
+      transform: translateX(-50%);
+   }
+
+   &_left, &_right {
+      flex: 1;
+      min-width: 8%;
+   }
+
+   &_left {
+      justify-content: flex-end;
+   }
+
+   &_left &__svg {
+      transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+   }
+
+   &_right &__svg{
+      transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
    }
 }

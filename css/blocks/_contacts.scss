@@ -10,11 +10,19 @@
       display: inline-block;
       color: $red;
       font-weight: 500;
+      fill: $red;
 
       &:hover {
-         transition: .3s;
+         transition: .2s;
          color: rgba($red, .7);
+         fill: rgba($red, .7);
       }  
+
+      &-svg {
+         width: 10px;
+         height: 10px;
+         margin-right: 5px;
+      }
    }
 
    &__address {

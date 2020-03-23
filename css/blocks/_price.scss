@@ -1,3 +1,71 @@
 .price {
-   background: url('/img/price/orange-bg.jpg') center center / cover no-repeat;
+  background-image: linear-gradient(#f9b43b, #eb8c38, #f9b43b);
+
+  &__section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__container {
+    display: inline-flex;
+    width: rem(940px);
+    overflow: hidden;
+    //  ! разобраться с шириной!
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    will-change: right;
+    transition: right 0.3s;
+    -webkit-transition: right 0.3s;
+    -moz-transition: right 0.3s;
+    -ms-transition: right 0.3s;
+    -o-transition: right 0.3s;
+  }
+
+  //  ! разобраться с шириной!
+
+  &__item {
+    min-width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //  ! разобраться с шириной!
+
+    @include tablets {
+      flex-direction: column;
+    }
+  }
+
+  &__img {
+    width: 50%;
+
+    &-elem {
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    @include tablets {
+      width: 95%;
+    }
+  }
+
+  &__content {
+    width: 50%;
+
+    @include tablets {
+      width: 80%;
+    }
+  }
+
+  &__pricetag {
+    display: flex;
+    align-items: flex-end;
+    margin-top: rem(10px);
+  }
 }

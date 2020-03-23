@@ -386,7 +386,7 @@ html {
 }
 @media screen and (max-width: 480px) {
   html {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
@@ -548,7 +548,7 @@ p {
 }
 
 .container {
-  margin: 0px auto;
+  margin: 0 auto;
   height: 100%;
   width: 95%;
   max-width: 58.75rem;
@@ -610,6 +610,9 @@ p {
   .navi {
     display: none;
   }
+}
+.navi_block {
+  display: block;
 }
 
 .navi__list {
@@ -710,7 +713,7 @@ p {
     height: 0.375rem;
   }
   .header_popup-navi .btn-navi-link {
-    top: 27px;
+    top: 25px;
   }
   .header_popup-navi .btn__burger {
     background: transparent;
@@ -801,7 +804,7 @@ p {
 
 .pagination {
   position: fixed;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
   right: 3.125rem;
   z-index: 100;
@@ -898,23 +901,43 @@ p {
     font-size: 3rem;
   }
 }
-.preview__pricetag {
-  display: flex;
-  align-items: flex-end;
-  margin-top: 0.625rem;
-}
 
 .mover {
+  display: flex;
+  align-items: center;
+}
+.mover__svg {
+  display: block;
+  width: 1.875rem;
+  height: 1.0625rem;
+  fill: #ffffff;
+}
+.mover_hero {
   position: absolute;
   bottom: 2.5rem;
   left: 50%;
   transform: translateX(-50%);
 }
-.mover__svg {
-  display: block;
-  width: 1.875rem;
-  height: 0.9375rem;
-  fill: #ffffff;
+.mover_left, .mover_right {
+  flex: 1;
+  min-width: 8%;
+}
+.mover_left {
+  justify-content: flex-end;
+}
+.mover_left .mover__svg {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+.mover_right .mover__svg {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
 }
 
 .features {
@@ -995,7 +1018,66 @@ p {
 }
 
 .price {
-  background: url("/img/price/orange-bg.jpg") center center/cover no-repeat;
+  background-image: linear-gradient(#f9b43b, #eb8c38, #f9b43b);
+}
+.price__section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+.price__container {
+  display: inline-flex;
+  width: 58.75rem;
+  overflow: hidden;
+}
+.price__list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  will-change: right;
+  transition: right 0.3s;
+  -webkit-transition: right 0.3s;
+  -moz-transition: right 0.3s;
+  -ms-transition: right 0.3s;
+  -o-transition: right 0.3s;
+}
+.price__item {
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .price__item {
+    flex-direction: column;
+  }
+}
+.price__img {
+  width: 50%;
+}
+.price__img-elem {
+  max-width: 100%;
+  object-fit: contain;
+}
+@media screen and (max-width: 768px) {
+  .price__img {
+    width: 95%;
+  }
+}
+.price__content {
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  .price__content {
+    width: 80%;
+  }
+}
+.price__pricetag {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 0.625rem;
 }
 
 .feedback {
@@ -1204,6 +1286,11 @@ p {
 .order {
   background: url("/img/form/bg-texture.png"), url("/img/form/form-bg.jpg") center center/cover;
 }
+.order__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .carte {
   background: url(/img/carte/menu_pic.jpg) center center/cover no-repeat;
@@ -1332,6 +1419,7 @@ p {
 }
 .form__input {
   width: 100%;
+  color: #2f3234;
   padding: 0.5625rem 1.25rem;
   border-radius: 0.3125rem;
   outline: transparent;
@@ -1398,7 +1486,7 @@ p {
 }
 .form__input-radio:checked + .form__checkbox-style::after {
   content: "";
-  background: url("../../img/form/flag.png") center/contain no-repeat;
+  background: url("../../img/form/flag.svg") center/contain no-repeat;
   display: block;
   width: 0.875rem;
   height: 0.875rem;
@@ -1442,10 +1530,17 @@ p {
   display: inline-block;
   color: #e35028;
   font-weight: 500;
+  fill: #e35028;
 }
 .contacts .contacts__phone:hover {
-  transition: 0.3s;
+  transition: 0.2s;
   color: rgba(227, 80, 40, 0.7);
+  fill: rgba(227, 80, 40, 0.7);
+}
+.contacts .contacts__phone-svg {
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
 }
 .contacts__address {
   white-space: nowrap;

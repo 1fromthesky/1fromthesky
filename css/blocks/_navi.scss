@@ -4,7 +4,11 @@ $itemMargin: rem(12px);
 
    @include navi-menu {
       display: none;
-  }
+   }
+
+   &_block {
+      display: block;
+   }
 }
 
 

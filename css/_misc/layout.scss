@@ -6,7 +6,7 @@ html {
    }
 
    @include phones {
-      font-size: 14px;
+      font-size: 13px;
    }
 }
 
@@ -170,13 +170,12 @@ p {
 }
 
 .container {
-   margin: 0px auto;
+   margin: 0 auto;
    height: 100%;
    width: 95%;
    max-width: rem(940px);
    position: relative;
-   // !rem not work
-   // ?padding: rem(0px) rem(10px); max-width: rem(960px);
+   // padding: 0 rem(10px);
 
    &_flex-column {
       display: flex;

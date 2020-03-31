@@ -1,6 +1,6 @@
 .ingredient {
    position: absolute;
-   bottom: 100%;
+   top: 25%;
    width: rem(90px);
    height: rem(90px);
    border-radius: 6px;
@@ -10,6 +10,7 @@
    -o-border-radius: 6px;
    background: #f08c33 url('../../img/icons-svg/burger.svg') center 30% / 50% no-repeat;
    cursor: pointer;
+   z-index: 10;
 
    &::before {
       content: 'состав';

@@ -1,27 +1,56 @@
-$itemMargin: rem(12px);
-
 .navi {
-
-   @include navi-menu {
-      display: none;
-   }
-
-   &_block {
-      display: block;
-   }
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   flex: 1 1 auto;
 }
-
-
 
 .navi__list {
    display: flex;
    align-items: center;
+
+   @include tablets {
+      flex-direction: column;
+      justify-content: center;
+      font-size: rem(24px);
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba($black, .99);
+      display: none;
+      overflow: auto;
+
+      .navi__link {
+         margin: 0;
+      }
+
+      .navi__item {
+         flex-direction: column;
+         margin: 0;
+      
+         &::before {
+            margin: rem(20px) 0;
+            width: rem(6px);
+            height: rem(6px);
+         }
+      }
+
+      .btn {
+         display: none;
+      }
+
+      &_open {
+         display: flex;
+      }
+   }
 }
 
 .navi__item {
    display: flex;
    align-items: center;
-   margin-right: $itemMargin;
+   margin-right: rem(12px);
 
    &::before {
       content: '';
@@ -42,7 +71,7 @@ $itemMargin: rem(12px);
 .navi__link {
    text-transform: uppercase;
    white-space: nowrap;
-   margin-left: $itemMargin;
+   margin-left: rem(12px);
 
    &:hover {
       color: $yellow;

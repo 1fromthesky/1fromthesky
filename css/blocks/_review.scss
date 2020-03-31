@@ -5,7 +5,9 @@
    transition: .3s;
 
    &__img-bg {
-      object-fit: cover;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       height: 100%;
       width: 100%;
    }

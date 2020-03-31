@@ -38,7 +38,6 @@ $phoneInput.addEventListener("keydown", checkNumber);
 const $nameInput = $orderForm.name;
 $nameInput.addEventListener("keydown", function(e) {
   let isDigit = false;
-  let isControl = false;
 
   if (e.key >= 0 || e.key <= 9) {
     isDigit = true;

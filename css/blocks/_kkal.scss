@@ -1,6 +1,6 @@
 .kkal {
    position: absolute;
-   top: 100%;
+   top: 90%;
    @include gagalin();
    color: rgba($white, .5);
 
@@ -29,15 +29,24 @@
       height: rem(90px);
    }
 
-   &__num {
+   &::after {
+      content: '1200';
+      font-size: rem(20px);
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -20%);
-      font-size: rem(20px);
-      -webkit-transform: translate(-50%, -20%);
-      -moz-transform: translate(-50%, -20%);
-      -ms-transform: translate(-50%, -20%);
-      -o-transform: translate(-50%, -20%);
+
    }
+
+   // &__num {
+   //    position: absolute;
+   //    top: 50%;
+   //    left: 50%;
+   //    font-size: rem(20px);
+   //    -webkit-transform: translate(-50%, -20%);
+   //    -moz-transform: translate(-50%, -20%);
+   //    -ms-transform: translate(-50%, -20%);
+   //    -o-transform: translate(-50%, -20%);
+   // }
 }

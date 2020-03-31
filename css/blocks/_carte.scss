@@ -1,15 +1,12 @@
 .carte {
    background: url(/img/carte/menu_pic.jpg) center center / cover no-repeat;
+   position: relative;
 
-   &__wrap-title {
+   &__title_position {
       display: inline-flex;
       position: relative;
       left: rem(100px);
       top: rem(150px);
-   }
-
-   &_title {
-      color: $white;
    }
 
    &__list {
@@ -23,34 +20,25 @@
    &__item {
       display: flex;
 
-      &_active {
-         background: rgba($black, .8);
-
-         .carte__title {
+      &_open {
+         .carte__title{
             color: $yellow;
          }
 
          .carte__content {
-            width: 530px;
+            max-width: rem(530px);
             padding: 10% 5%;
-            line-height: 1rem;
 
-            @include tablets {
-               width: 100%;
-               padding: 10% 5%;
-               font-size: rem(12px);
-            }  
+            p {
+               opacity: 1;
+            }
          }
       }
    }
-// ??? непонятно с размерами link 
-// ???(по разному масштабируются одни и тежже элементы)
+
    &__link {
-      min-width: rem(70px);
+      min-width: rem(80px);
       position: relative;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
 
       &::before {
          content: '';
@@ -59,7 +47,6 @@
          bottom: 0;
          left: 0;
          right: 0;
-         margin: 0 auto;
          background-color: rgba($black, .6);
       }
 
@@ -77,25 +64,36 @@
    }
 
    &__title {
+      white-space: nowrap;
       line-height: 1;
       @include gagalin();
       font-size: rem(40px);
-      transform: rotate(180deg);
-      writing-mode: vertical-lr;
-      padding-top: 30px;
-
-      @include tablets {
-         font-size: rem(36px);
-      }
-
-      @include phones {
-         font-size: rem(30px);
-      }
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform-origin: 0 50%;
+      transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
    }
 
    &__content {
-      width: 0;
       overflow: hidden;
+      background: rgba($black, .8);
+      max-width: 0;
+      transition: max-width .1s linear;
+      //todoприпереключенииаккордеонавначалеанимациипроисходитдерганьеp:;
+      -webkit-transition: max-width .1s linear;
+      -moz-transition: max-width .1s linear;
+      -ms-transition: max-width .1s linear;
+      -o-transition: max-width .1s linear;
+
+      p  {
+         opacity: 0;
+         transition: .4s ease-out;
+         transition-delay: 0.2s;
+      }
    }
 }
-

@@ -19,11 +19,7 @@
       @content;
    }
 }
-@mixin navi-menu {
-   @media screen and (max-width: $tablets) {
-      @content;
-   }
-}
+
 @function rem($px) {
    @return $px / 16px + 0rem;
 }

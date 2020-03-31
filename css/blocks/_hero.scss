@@ -1,4 +1,17 @@
 .hero {
-   background: url('/img/hero/texture.png'), url('/img/hero/salat.jpg') center center / cover;
+   background: url('/img/hero/salat.jpg') center center / cover;
+   position: relative;
    color: $white;
+
+   &::before {
+      content: '';
+      display: block;
+      background: url('/img/hero/texture.png') center center / cover no-repeat;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+   }
 }

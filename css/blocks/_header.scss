@@ -3,90 +3,16 @@
    display: flex;
    align-items: center;
    justify-content: space-between;
-   @include ubuntu(regular);
-   font-size: rem(13px);
+   @include ubuntu(medium);
+   font-size: 13px;
+   z-index: 10;
 
-   &__btns {
-      display: flex;
-      align-items: center;
-   }
-
-   &__links {
-      display: flex;
-      align-items: center;
-   }
-
-
-
-   &_popup-navi {
-      padding: rem(12px) rem(20px);
-      @include navi-menu {
-         display: flex;
-         align-items: flex-start;
-         position: fixed;
-         top: 0;
-         bottom: 0;
-         left: 0;
-         right: 0;
-         background: rgba($black, .99);
-         z-index: 1000;
-         
-         .btn {
-            display: none;
-         }
-
-         .navi {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-   
-         }
-         .navi__list {
-            flex-direction: column;
-            font-size: rem(24px);
-            @include ubuntu(regular);
-         }
-         
-   
-         .navi__link {
-            margin: 0;
-         }
-   
-         .navi__item {
-            flex-direction: column;
-            margin: 0;
-         
-            &::before {
-               margin: rem(20px) 0;
-               width: rem(6px);
-               height: rem(6px);
-            }
-         }
-
-         .btn-navi-link {
-            top: 25px;
-         }
-
-         .btn__burger {
-            background: transparent;
-
-            &::before {
-               transform: rotate(45deg);
-               position: absolute;
-               top: 0;
-               left: 0;
-            }
-         
-            &::after {
-               transform: rotate(-45deg);
-               position: absolute;
-               top: 0;
-            }
-         }
+   &__logo {
+      position: relative;
+      flex: 0 0 auto;
+      z-index: 10;
+      img {
+         max-width: 92px;
       }
    }
 }

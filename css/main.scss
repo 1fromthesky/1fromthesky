@@ -4,6 +4,7 @@ $yellow: #f9b43b;
 $black: #2f3234;
 $red: #e35028;
 $white: #ffffff;
+// TODO имена переменных заводить нейтральными для удобства редизайна
 
 // resolutions
 $desktop: 1200px;
@@ -26,7 +27,6 @@ $phones: 480px;
 @import './blocks/slide';
 @import './blocks/hero';
 @import './blocks/navi';
-@import './blocks/logo';
 @import './blocks/header';
 @import './blocks/btn';
 @import './blocks/btn-burger';

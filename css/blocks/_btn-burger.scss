@@ -1,43 +1,70 @@
-.btn-navi-link {
-   position: relative;
-   align-items: center;
-   // vertical-align: middle;
-   height: rem(25px);
-   margin: 0 rem(30px);
-   transition: .1s;
-
+.btn-burger {
    display: none;
+   flex-direction: column;
+   justify-content: space-between;
+   position: relative;
+   height: rem(25px);
+   width: rem(25px);
+   transition: .1s;
+   -webkit-transition: .1s;
+   -moz-transition: .1s;
+   -ms-transition: .1s;
+   -o-transition: .1s;
+   margin: 0 rem(30px);
+   
    @include tablets {
-      display: flex;
+      display: inline-flex;
    }
 
    &:hover {
+      transition: .2s;
       transform: rotate(180deg);
-      transition: .1s;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -webkit-transition: .2s;
+      -moz-transition: .2s;
+      -ms-transition: .2s;
+      -o-transition: .2s;
    }
-}
-
-.btn__burger {
-   position: relative;
    
-   &, &::before, &::after {
-      content: '';
-      background-color: $white;
-      height: rem(5px);
-      width: rem(24px);
-      border-radius: rem(4px);
+   span {
+      display: inline-block;
+      width: 100%;
+      height: 5px;
+      background-color: #fff;
+      border-radius: 2px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      -ms-border-radius: 2px;
+      -o-border-radius: 2px;
    }
+   
+   &_open {
+      span {
+         position: absolute;
+         top: 50%;
+         left: 50%;
 
-   &::before, &::after {
-      content: '';
-      display: block;
-      position: absolute;
-   }
-   &::before {
-      top: 200%;
-   }
-
-   &::after {
-      top: -200%;
-   }
+         &:first-of-type {
+            transform: translate(-50%, -50%) rotate(45deg);
+            -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            -moz-transform: translate(-50%, -50%) rotate(45deg);
+            -ms-transform: translate(-50%, -50%) rotate(45deg);
+            -o-transform: translate(-50%, -50%) rotate(45deg);
+         }
+         &:nth-child(2) {
+            display: none;
+         }
+         &:last-of-type {
+            transform: translate(-50%, -50%) rotate(-45deg);
+            -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+            -moz-transform: translate(-50%, -50%) rotate(-45deg);
+            -ms-transform: translate(-50%, -50%) rotate(-45deg);
+            -o-transform: translate(-50%, -50%) rotate(-45deg);
+         }
+      }      
+   }   
 }
+

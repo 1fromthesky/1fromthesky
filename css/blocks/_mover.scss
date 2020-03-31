@@ -1,6 +1,7 @@
 .mover {
    display: flex;
    align-items: center;
+   position: relative;
 
    &__svg {
       display: block;
@@ -18,7 +19,6 @@
 
    &_left, &_right {
       flex: 1;
-      min-width: 8%;
    }
 
    &_left {

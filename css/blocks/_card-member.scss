@@ -1,13 +1,15 @@
 .card-member__item {
-   margin-bottom: rem(35px);
-
-   &:last-child {
-      margin-bottom: 0;
+   margin-top: 20px;
+   
+   &:first-child {
+      margin-top: 0;
    }
 }
 
+
 .card-member__link {
-   display: inline-block;
+   display: inline-flex;
+   align-items: center;
    @include gagalin();
    font-size: rem(14px);
    color: $white;
@@ -15,44 +17,31 @@
    &::before {
       content: '';
       display: inline-block;
+      margin-right: 15px;
+      width: 0;
+      height: 0;
       border: rem(7px) solid transparent;
       border-left-width: rem(5px);
       border-right-width: rem(5px);
       border-top-color: $yellow;
       border-bottom: none;
-      margin-right: rem(10px);
-   }
-}
-
-.card-member__item-activ {
-   .card-member__trigger {
-      height: 100%;
-      overflow: visible;
    }
 
-   .card-member__link {
-      color: $yellow;
-
-      &::before {
-         content: '';
-         display: inline-block;
-         border: rem(7px) solid transparent;
-         border-left-width: rem(5px);
-         border-right-width: rem(5px);
-         border-bottom-color: $yellow;
-         border-top: none;
-         margin-right: rem(10px);
-      }
+   @include tablets {
+      margin-left: -20px;
+      font-size: rem(24px);
    }
 }
 
 .card-member__trigger {
-   display: flex;
-   height: 0;
-   overflow: hidden;
-   padding-top: rem(15px);
+  display: flex;
+  align-items: flex-start;
+  height: 0;
+  overflow: hidden;
+  margin-top: rem(18px);
+  padding-left: rem(17px);
 
-   @include tablets {
+  @include tablets {
       flex-direction: column;
       align-items: center;
       padding: 0 18%;
@@ -75,20 +64,44 @@
    }
 }
 
-.card-member__img-wrap {
-   overflow: hidden;
+.card-member__img {
+   display: block;
+   margin: 0;
    width: rem(100px);
-   height: rem(100px);
+   flex: 0 0 auto;
    border-radius: 50%;
-   flex-shrink: 0;
-   margin-left: rem(15px);
+   background-size: cover;
+   background-position: center;
+
+   &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 100%;
+      // !как это конструкция работает?
+   }
+
 
    @include tablets {
-      margin: 15px 0;
+      margin: 0 0 rem(15px) 0;
    }
 }
 
-.card-member__img {
-   object-fit: cover;
-   height: 100%;
+.card-member_open {
+   .card-member__trigger {
+  height: 100%;
+  overflow: visible;
+}
+  
+   .card-member__link {
+      color: $yellow;
+
+      &::before {
+         border: rem(7px) solid transparent;
+         border-left-width: rem(5px);
+         border-right-width: rem(5px);
+         border-bottom-color: $yellow;
+         border-top: none;
+      }
+   }
 }

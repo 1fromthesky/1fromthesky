@@ -637,8 +637,9 @@ p {
   border-radius: 0.3125rem;
   line-height: 1;
   display: inline-flex;
-  border: 0.125rem solid transparent;
+  border: 1px solid transparent;
   outline: none;
+  color: #ffffff;
 }
 .btn_cancel {
   background: none;
@@ -651,7 +652,7 @@ p {
   transition: 0.2s;
 }
 .btn:focus {
-  border: 0.125rem solid #f9b43b;
+  border: 1px solid #f9b43b;
 }
 .btn:hover {
   background: #c1401e;
@@ -949,6 +950,7 @@ p {
   height: 100%;
   width: 85%;
   max-width: 58.75rem;
+  overflow: hidden;
 }
 .price__container {
   overflow: hidden;
@@ -960,7 +962,6 @@ p {
   flex: 1 0 auto;
   align-items: center;
   will-change: right;
-  transition: right 0.3s;
   -webkit-transition: right 0.3s;
   -moz-transition: right 0.3s;
   -ms-transition: right 0.3s;
@@ -977,11 +978,12 @@ p {
 @media screen and (max-width: 768px) {
   .price__item {
     flex-direction: column;
+    padding: 0 25px;
   }
 }
 .price__img {
-  height: 50%;
-  width: 50%;
+  width: 45%;
+  padding: 0 10px;
   position: relative;
 }
 .price__img-elem {
@@ -991,26 +993,18 @@ p {
 }
 @media screen and (max-width: 768px) {
   .price__img {
-    min-width: 70%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .price__img {
-    min-width: 100%;
+    min-width: 90%;
   }
 }
 .price__content {
-  width: 50%;
+  width: 55%;
+  padding: 0 10px;
 }
 @media screen and (max-width: 768px) {
   .price__content {
     text-align: center;
-    margin-top: 5%;
     width: auto;
   }
-}
-.price__content p {
-  margin-top: 5%;
 }
 .price__pricetag {
   display: flex;
@@ -1035,10 +1029,15 @@ p {
   color: #ffffff;
   line-height: 0.9;
 }
+@media screen and (max-width: 768px) {
+  .price__title {
+    margin: 8% 0;
+  }
+}
 
 .ingredient {
   position: absolute;
-  top: 25%;
+  bottom: 100%;
   width: 5.625rem;
   height: 5.625rem;
   border-radius: 6px;
@@ -1049,6 +1048,11 @@ p {
   background: #f08c33 url("../../img/icons-svg/burger.svg") center 30%/50% no-repeat;
   cursor: pointer;
   z-index: 10;
+}
+@media screen and (max-width: 768px) {
+  .ingredient {
+    bottom: 90%;
+  }
 }
 .ingredient::before {
   content: "состав";
@@ -1114,7 +1118,7 @@ p {
 @media screen and (max-width: 768px) {
   .kkal {
     top: inherit;
-    bottom: 100%;
+    bottom: 90%;
     right: 0;
   }
 }
@@ -1663,6 +1667,37 @@ p {
 
 .presentation {
   background: url("/img/presentation/presentation_bg.jpg") center center/cover no-repeat;
+}
+
+.overlay {
+  background: rgba(47, 50, 52, 0.9);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.overlay__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "ubuntu", Arial, sans-serif;
+  font-weight: 400;
+  color: #2f3234;
+  width: 200px;
+  height: 110px;
+  background: #ffffff;
+  border-radius: 5px;
+}
+.overlay__content {
+  text-align: center;
+  margin: 20px 0 16px;
 }
 
 .footer {

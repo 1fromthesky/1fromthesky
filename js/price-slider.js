@@ -1,30 +1,57 @@
-const $left = document.querySelector("#left");
-const $right = document.querySelector("#right");
-const $itemFilm = document.querySelector(".price__list");
 
-const $step = 100;
-const $maxRight = 400;
-const $minRight = 0;
-let $currentRight = 0;
+document.addEventListener('DOMContentLoaded', function() {
+  initPriceSlider()
+})
 
-$itemFilm.style.right = $currentRight;
 
-const $sliderStepRight = function(e) {
-  e.preventDefault();
-  if ($currentRight < $maxRight) {
-    $currentRight += $step;
-    $itemFilm.style.right = $currentRight + "%";
+function initPriceSlider() {
+
+  const prevToggle = document.getElementById('prev-toggle');
+  const nextToggle = document.getElementById('next-toggle');
+  const priceContainer = document.getElementById('price-container');
+  const priceAllItems = priceContainer.querySelectorAll('.price__item');
+
+  let currentWidth = 0;
+  let currentIndex = 0;
+
+  function slideToCurrent() {
+    priceContainer.style.marginLeft = -currentIndex * currentWidth + "px";
   }
-};
 
-$right.addEventListener("click", $sliderStepRight);
-
-const $sliderStepLeft = function(e) {
-  e.preventDefault();
-  if ($currentRight > $minRight) {
-    $currentRight -= $step;
-    $itemFilm.style.right = $currentRight + "%";
+  function render() {
+    currentWidth = priceContainer.offsetWidth;
+    for (let i = 0; i < priceAllItems.length; i++) {
+      let priceItem = priceAllItems[i];
+      priceItem.style.width = currentWidth + "px"; 
+    }
+    priceContainer.style.width = (priceAllItems.length * currentWidth) + "px";
+    slideToCurrent()
   }
-};
+  render()
+  
+  prevToggle.addEventListener('click', function(event) {
+    event.preventDefault();  
+    if (currentIndex > 0) {
+    --currentIndex;
+    } else {
+      currentIndex = priceAllItems.length - 1;
+    }
+    slideToCurrent()
+  })
 
-$left.addEventListener("click", $sliderStepLeft);
+  nextToggle.addEventListener('click', function(event) {
+    event.preventDefault();  
+    if (currentIndex < priceAllItems.length - 1) {
+    ++currentIndex;
+    } else {
+      currentIndex = 0;
+    }
+    slideToCurrent()
+  })
+
+  window.addEventListener('resize', function() {
+    render()
+  })
+}
+
+// !доработать разобрать!

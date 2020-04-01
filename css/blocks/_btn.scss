@@ -7,8 +7,9 @@
    border-radius: rem(5px);
    line-height: 1;
    display: inline-flex;
-   border: rem(2px) solid transparent;
+   border: 1px solid transparent;
    outline: none;
+   color: $white;
 
    &_cancel {
       background: none;
@@ -22,7 +23,7 @@
    }
 
    &:focus {
-      border: rem(2px) solid $yellow;
+      border: 1px solid $yellow;
    }
 
    &:hover {

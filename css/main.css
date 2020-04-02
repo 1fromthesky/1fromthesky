@@ -579,6 +579,7 @@ p {
   }
   .navi__list_open {
     display: flex;
+    z-index: 5;
   }
 }
 
@@ -1047,7 +1048,7 @@ p {
   -o-border-radius: 6px;
   background: #f08c33 url("../../img/icons-svg/burger.svg") center 30%/50% no-repeat;
   cursor: pointer;
-  z-index: 10;
+  z-index: 3;
 }
 @media screen and (max-width: 768px) {
   .ingredient {
@@ -1448,25 +1449,18 @@ p {
   left: 50%;
   transform-origin: 0 50%;
   transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
 }
 .carte__content {
   overflow: hidden;
   background: rgba(47, 50, 52, 0.8);
   max-width: 0;
-  transition: max-width 0.1s linear;
-  -webkit-transition: max-width 0.1s linear;
-  -moz-transition: max-width 0.1s linear;
-  -ms-transition: max-width 0.1s linear;
-  -o-transition: max-width 0.1s linear;
+  transition: max-width 0.5s linear;
 }
 .carte__content p {
+  width: 300px;
   opacity: 0;
-  transition: 0.4s ease-out;
-  transition-delay: 0.2s;
+  transition: 1s ease-out;
+  transition-delay: 1s;
 }
 
 .form {

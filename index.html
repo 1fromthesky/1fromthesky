@@ -728,7 +728,7 @@
                   <div class="form__row">
                      <label class="form__label">
                         <div class="form__title">Комментарий</div>
-                        <textarea class="form__input form__textarea" name="comment" placeholder="urgency"></textarea>
+                        <textarea class="form__input form__textarea" name="comment"></textarea>
                         <div class="error"></div>
                      </label>
                   </div>
@@ -746,7 +746,7 @@
                   </div>
                   <div class="form__row">
                      <label class="form__radio">
-                        <input type="checkbox" class="form__input-radio" name="call" checked>
+                        <input type="checkbox" class="form__input-radio" name="call">
                         <span class="form__checkbox-style"></span>
                         <div class="form__title">Не перезванивать</div>
                      </label>
@@ -838,18 +838,21 @@
          </ul>
       </div>
 
-      <!-- <div class="overlay" id="overlay">
-         <div class="overlay__container">
-            <div class="overlay__content">Сообщение отправлено</div>
-            <a href="#" class="btn" id="close-overlay">закрыть</a>
+      <script type="template" id="overlayTemplate">
+         <div class="overlay" id="overlay">
+            <div class="overlay__container">
+               <div class="overlay__content"></div>
+               <a href="#" class="btn" id="close-overlay">закрыть</a>
+            </div>
          </div>
-      </div> -->
+      </script>
 
    </div>
    
    <script src="./js/navi.js"></script>
    <script src="./js/carte-menu.js"></script>
    <script src="./js/form.js"></script>
+   <script src="./js/modal-overlay.js"></script>
    <script src="./js/price-slider.js"></script>
    <script src="./js/crew.js" defer></script>
 </body>

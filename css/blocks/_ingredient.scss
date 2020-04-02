@@ -10,7 +10,7 @@
    -o-border-radius: 6px;
    background: #f08c33 url('../../img/icons-svg/burger.svg') center 30% / 50% no-repeat;
    cursor: pointer;
-   z-index: 10;
+   z-index: 3;
 
    @include tablets {
       bottom: 90%;

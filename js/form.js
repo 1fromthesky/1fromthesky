@@ -1,216 +1,86 @@
-const orderForm = document.forms.orderForm;
-const phone_input = orderForm.phone;
-const name_input = orderForm.name;
-const formSection = document.querySelector('#form');
+const orderForm = document.forms.orderForm; //*форма
+const phone_input = orderForm.phone; //* поле - телефон
+const name_input = orderForm.name; //* поле - имя
+const buttonFormSubmit = document.querySelector("#send-form-btn"); //* поле - кнопка "заказать"
 
-// *sorting inputs: number and name
-const checkNumber = function(e) {
+//* Сортировка: number and name
+const checkNumber = function(event) {
   let isDigit = false;
   let isDash = false;
   let isControl = false;
 
-  if (e.key >= 0 || e.key <= 9) {
+  if (event.key >= 0 || event.key <= 9) {
     isDigit = true;
   }
 
-  if (e.key == "-") {
+  if (event.key == "-") {
     isDash = true;
   }
 
   if (
-    e.key == "ArrowLeft" ||
-    e.key == "ArrowRight" ||
-    e.key == "Backspace" ||
-    e.key == "Tab"
+    event.key == "ArrowLeft" ||
+    event.key == "ArrowRight" ||
+    event.key == "Backspace" ||
+    event.key == "Tab"
   ) {
     isControl = true;
   }
 
   if (!isDigit && !isDash && !isControl) {
-    e.preventDefault();
+    event.preventDefault();
   }
 };
 phone_input.addEventListener("keydown", checkNumber);
 // phone_input.removeEventListener('keydown', checkNumber);
 
-const checkName = function(e) {
+const checkName = function(event) {
   let isDigit = false;
 
-  if (e.key >= 0 || e.key <= 9) {
+  if (event.key >= 0 || event.key <= 9) {
     isDigit = true;
   }
 
   if (isDigit) {
-    e.preventDefault();
+    event.preventDefault();
   }
 };
 name_input.addEventListener("keydown", checkName) 
 // name_input.removeEventListener('keydown', checkNumber);
 
 
-// !-----------------
-// *-----------------
-// ?-----------------
-// todo--------------
-
-const buttonFormSubmit = document.querySelector("#send-form-btn");
-const successOverlay = createOverlay("Сообщение отправлено");
-
-// *button click
+//* Обработчик событий на кнопку "Заказать"
 buttonFormSubmit.addEventListener("click", (event) => {
-  event.preventDefault();
-  sendData();
-  document.body.appendChild(successOverlay);
-  // document.body.style.height = "100vh";
-  // document.body.style.overflow = "hidden";
 
-});  
-
-// *function to send form date
-function sendData() {
-  // const formData = new FormData();
-  const data = {
-    name: orderForm.elements.name.value,
-    phone: orderForm.elements.phone.value,
-    to: orderForm.elements.to.value,
-    comment: orderForm.elements.comment.value
-  };
-
-  const xhr = new XMLHttpRequest();
-  xhr.responseType = 'json';
-  xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-  xhr.send(JSON.stringify(data));
-  xhr.addEventListener('load', () => {
-    console.log(xhr.response);
-  });
-};
-
-// *overlay
-function createOverlay(content) {
-  const overlayElement = document.createElement('div');
-  overlayElement.classList.add('overlay');
-  overlayElement.addEventListener('click', (e) => {
-    if (e.target === overlayElement) {
-      btnClose.click();
-    }
-  });
-
-  const containerElement = document.createElement('div');
-  containerElement.classList.add('overlay__container');
-
-  const contentElement = document.createElement('div');
-  contentElement.classList.add('overlay__content');
-  contentElement.innerHTML = content;
-
-  const btnClose = document.createElement('a');
-  btnClose.classList.add('btn');
-  btnClose.setAttribute('id','close-overlay');
-  btnClose.textContent = "Закрыть";
-  btnClose.href = "#";
-  btnClose.addEventListener('click', (event) => {
+  //* Общение с сервером
+  //* Если форма не валидна, браузер будет выводить стандартные сообщения валидности
+  //* Если валидна, выполнится код ниже
+  if (orderForm.checkValidity()) {
     event.preventDefault();
-    // document.body.style.height = "100%";
-    // document.body.style.overflow = "visible";
-    document.body.removeChild(overlayElement);
-  });
+    overlay.open()
+    overlay.setContent('Ожидание ответа');
 
-  overlayElement.appendChild(containerElement);
-  containerElement.appendChild(contentElement);
-  containerElement.appendChild(btnClose);
-
-  return overlayElement;
-};
-
-
-  // if (validateForm(orderForm)) {
-  //   const data = {
-  //   name: orderForm.elements.name.value,
-  //   phone: orderForm.elements.phone.value,
-  //   to: orderForm.elements.to.value,
-  //   comment: orderForm.elements.comment.value,
-  // }
+  //* Создание объекта FormData
+    const data = new FormData();
+    data.append("name", orderForm.elements.name.value); 
+    data.append("phone", orderForm.elements.phone.value); 
+    data.append("comment", orderForm.elements.comment.value); 
+    data.append("to", "code_raja@mail.ru"); 
     
-  // function validateForm(form) {
-  //   let valid = true;
-  
-  //   if (!validateField(orderForm.elements.name)) {
-  //     valid = false;
-  //   }
-  //   if (!validateField(orderForm.elements.phone)) {
-  //     valid = false;
-  //   }
-  //   if (!validateField(orderForm.elements.to)) {
-  //     valid = false;
-  //   }
-  //   if (!validateField(orderForm.elements.comment)) {
-  //     valid = false;
-  //   }
-  //   return valid;
-  // }
-  
-  // function validateField(field) {
-  //   field.nextElementSibling.textContent = field.validationMessage;
-  //   return field.checkValidity();
-  // }
+  //* Создание Ajax запроса
+    const xhr = new XMLHttpRequest();
 
+    xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail', true);
+    xhr.responseType = 'json';
+    xhr.send(data);
+    
+    //* Обработчик ответа от сервера
+    xhr.addEventListener('load', () => {
+      if (xhr.status >= 400) {
+        overlay.setContent('Ошибка');
+      } else {
+        overlay.setContent('Сообщение отправленно');
+      }
+    });
+  } 
+});
 
-// * 1/4 version of overley
-// const buttonFormSubmit = document.querySelector("#send-form-btn");
-// const successOverlay = createOverlay("Сообщение отправлено");
-// buttonFormSubmit.addEventListener('click', (event) => {
-//  event.preventDefault();
-//  document.body.appendChild(successOverlay);
-// });
-
-// function createOverlay(content) {
-//   const overlayElement = document.createElement('div');
-//   overlayElement.classList.add('overlay');
-//   overlayElement.addEventListener('click', (e) => {
-//     if (e.target === overlayElement) {
-//       btnClose.click();
-//     }
-//   });
-
-//   const containerElement = document.createElement('div');
-//   containerElement.classList.add('overlay__container');
-
-//   const contentElement = document.createElement('div');
-//   contentElement.classList.add('overlay__content');
-//   contentElement.innerHTML = content;
-
-//   const btnClose = document.createElement('a');
-//   btnClose.classList.add('btn');
-//   btnClose.setAttribute('id','close-overlay');
-//   btnClose.textContent = "Закрыть";
-//   btnClose.href = "#";
-//   btnClose.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     document.body.removeChild(overlayElement);
-//   });
-
-//   overlayElement.appendChild(containerElement);
-//   containerElement.appendChild(contentElement);
-//   containerElement.appendChild(btnClose);
-
-//   return overlayElement;
-// }
-
-// * 2/4 version of overley (uncomment in html)
-// const overlayElement = document.querySelector("#overlay");
-// const btnClose = overlayElement.querySelector('#close-overlay');
-
-  // function openOverlay() {
-  //   overlayElement.style.display = "flex";
-  // }
-  // openOverlay();
-
-// btnClose.addEventListener('click', (event) => {
-//   event.preventDefault();
-//   overlayElement.style.display = "none";
-// });
-
-// overlayElement.addEventListener('click', (e) => {
-//   if (e.target === overlayElement) {
-//     btnClose.click();
-//   }
-// });

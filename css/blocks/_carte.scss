@@ -73,27 +73,19 @@
       left: 50%;
       transform-origin: 0 50%;
       transform: rotate(-90deg);
-      -webkit-transform: rotate(-90deg);
-      -moz-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-      -o-transform: rotate(-90deg);
    }
 
    &__content {
       overflow: hidden;
       background: rgba($black, .8);
       max-width: 0;
-      transition: max-width .1s linear;
-      //todoприпереключенииаккордеонавначалеанимациипроисходитдерганьеp:;
-      -webkit-transition: max-width .1s linear;
-      -moz-transition: max-width .1s linear;
-      -ms-transition: max-width .1s linear;
-      -o-transition: max-width .1s linear;
+      transition: max-width 0.5s linear;
 
       p  {
+         width: 300px;
          opacity: 0;
-         transition: .4s ease-out;
-         transition-delay: 0.2s;
+         transition: 1s ease-out;
+         transition-delay: 1s;
       }
    }
 }

@@ -81,10 +81,10 @@
       max-width: 0;
       transition: max-width 0.5s linear;
 
+
       p  {
-         width: 300px;
          opacity: 0;
-         transition: 1s ease-out;
+         transition: .7s ease-out;
          transition-delay: 1s;
       }
    }

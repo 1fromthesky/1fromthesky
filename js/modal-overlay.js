@@ -15,14 +15,17 @@ function createOverlay(template) {
          btnCloseElement.click();
       }
    });
+
    btnCloseElement.addEventListener('click', (event) => {
       event.preventDefault();
+      document.body.style.overflow = 'visible';
       document.body.removeChild(overlayElement);
    });
    
    return {
       open() {
          document.body.appendChild(overlayElement);
+         document.body.style.overflow = 'hidden';
       },
       close() {
          btnCloseElement.click();

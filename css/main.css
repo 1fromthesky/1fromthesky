@@ -673,6 +673,7 @@ p {
   -ms-transition: 0.1s;
   -o-transition: 0.1s;
   margin: 0 1.875rem;
+  z-index: 10;
 }
 @media screen and (max-width: 768px) {
   .btn-burger {
@@ -1457,9 +1458,8 @@ p {
   transition: max-width 0.5s linear;
 }
 .carte__content p {
-  width: 300px;
   opacity: 0;
-  transition: 1s ease-out;
+  transition: 0.7s ease-out;
   transition-delay: 1s;
 }
 
@@ -1595,8 +1595,9 @@ p {
   margin-right: 0.625rem;
 }
 
-.map {
-  background: url("/img/map/bgmap.jpg") center center/cover no-repeat;
+#map {
+  width: 100%;
+  height: 100%;
 }
 
 .contacts {
@@ -1684,14 +1685,15 @@ p {
   font-family: "ubuntu", Arial, sans-serif;
   font-weight: 400;
   color: #2f3234;
-  width: 200px;
+  padding: 20px;
+  min-width: 200px;
   height: 110px;
   background: #ffffff;
   border-radius: 5px;
 }
 .overlay__content {
   text-align: center;
-  margin: 20px 0 16px;
+  margin: 0 0 16px;
 }
 
 .footer {

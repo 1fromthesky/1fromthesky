@@ -18,7 +18,8 @@
       align-items: center;
       @include ubuntu(regular);
       color: $black;
-      width: 200px;
+      padding: 20px;
+      min-width: 200px;
       height: 110px;
       background: $white;
       border-radius: 5px;
@@ -26,7 +27,7 @@
 
    &__content {
       text-align: center;
-      margin: 20px 0 16px;
+      margin: 0 0 16px;
    }
 }
 

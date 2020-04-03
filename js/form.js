@@ -56,8 +56,8 @@ buttonFormSubmit.addEventListener("click", (event) => {
   //* Если валидна, выполнится код ниже
   if (orderForm.checkValidity()) {
     event.preventDefault();
-    overlay.open()
     overlay.setContent('Ожидание ответа');
+    overlay.open()
 
   //* Создание объекта FormData
     const data = new FormData();
@@ -68,7 +68,6 @@ buttonFormSubmit.addEventListener("click", (event) => {
     
   //* Создание Ajax запроса
     const xhr = new XMLHttpRequest();
-
     xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail', true);
     xhr.responseType = 'json';
     xhr.send(data);
@@ -78,7 +77,7 @@ buttonFormSubmit.addEventListener("click", (event) => {
       if (xhr.status >= 400) {
         overlay.setContent('Ошибка');
       } else {
-        overlay.setContent('Сообщение отправленно');
+        overlay.setContent(xhr.response.message);
       }
     });
   } 

@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function OpenCard(event) {
    event.preventDefault();
    const element = event.currentTarget;
-   console.log(element);
    
    const parentElement = element.parentElement;
 

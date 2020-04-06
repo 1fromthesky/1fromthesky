@@ -1,0 +1,233 @@
+.player {
+   width: 100%;
+   height: 100%;
+   display: block;
+   position: relative;
+   
+   &__wrapper {
+   }
+
+   &__you {
+   }
+
+   // ? Экран до запуска видео
+   &__splash {
+      background: url(/img/player/splash.jpg) center center / cover no-repeat;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+
+      &-toggle {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -60%);
+         padding: 0;
+         border: 60px solid transparent;
+         background-color: transparent;
+         border-left-color: rgba($white, .8);
+         border-top-width: 50px;
+         border-bottom-width: 50px;
+         border-right: none;
+      }
+
+      &:hover .player__splash-toggle {
+         border-left-color: rgba($yellow, .8);
+      }
+   }
+// ? блок управления
+   &__controls {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 50px;
+      background: #5B5C5B;
+      background: -webkit-linear-gradient(top, #5B5C5B, #222222);
+      background: -moz-linear-gradient(top, #5B5C5B, #222222);
+      background: linear-gradient(to bottom, #5B5C5B, #222222);
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+// ? полоса прокрутки
+   &__time-line {
+      height: 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      &::before {
+         content: '';
+         display: block;
+         width: 350px;
+         border-radius: 2px;
+         height: 5px;
+         background-color: #ccc;
+
+         // @include tablets {
+         //    width: 220px;
+         // }
+      }
+   }
+// ? кнопка прокрутки (left 0 - 100%)
+   &__point-toggle {
+      padding: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      position: absolute;
+      transform: translateX(-8px);
+      background-color: $yellow;
+      left: 0;
+      
+      &:hover {
+         background-color: #ce8b18;
+      }
+   }
+
+   &__duration {
+      display: flex;
+      text-align: right;
+   }
+
+   &__duration-complete {
+      text-align: right;
+      &::after {
+         content: '/';
+         margin: 0 5px;
+      }
+   }
+
+   &__duration-estimate {
+   }
+
+   // ? при active, splash - none
+   &.active .player__splash {
+      display: none;
+   }
+
+   // ? кнопка play
+   .player__start {
+      padding: 0;
+      width: 0;
+      height: 0;
+      position: relative;
+      border: 15px solid transparent;
+      border-top-width: 11px;
+      border-bottom-width: 11px;
+      background-color: transparent;
+      border-right: none;
+      border-left-color: $white;
+
+      &:hover {
+         border-left-color: $yellow;
+      }
+   }
+
+
+   // ? кнопка паузы
+   &.paused {
+      .player__start {
+         padding: 0;
+         width: 15px;
+         height: 24px;
+         border: 0;
+         display: flex;
+         align-items: center;
+
+         &::before,
+         &::after {
+            content: '';
+            display: flex;
+            position: absolute;
+            height: 20px;
+            width: 5px;
+            background-color: $white;
+            border-radius: 2px;
+         }
+         &::before {
+            left: 0;
+         }
+         &::after {
+            right: 0;
+         }
+
+         &:hover::before {
+            background-color: $yellow;
+         }
+         &:hover::after {
+            background-color: $yellow;
+         }
+      }
+   }
+
+   &__mute {
+      background-color: transparent;
+      padding: 0;
+      position: relative;
+      border: 14px solid transparent;
+      border-left: none;
+      border-right-color: #fff;
+      border-top-width: 8px;
+      border-bottom-width: 8px;
+   
+      &::before {
+         content: '';
+         display: inline-flex;
+         position: absolute;
+         top: 0;
+         transform: translateY(-50%);
+         width: 12px;
+         height: 12px;
+         border-radius: 50%;
+         background-color: #fff;
+      }
+
+      &.voice-off {
+         border-right-color: $red;
+      }
+   }
+
+   .voice-off.player__mute::before {
+      background-color: $red;
+   }
+
+   &__mute-bar {
+      width: 50px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &::before {
+         content: '';
+         width: 50px;
+         height: 5px;
+         background-color: #ccc;
+         border-radius: 2px;
+      }
+
+      &-toggle {
+         padding: 0;
+         width: 14px;
+         height: 14px;
+         border-radius: 50%;
+         position: absolute;
+         transform: translateX(-8px);
+         background-color: $yellow;
+         left: 0%;
+         
+         &:hover {
+            background-color: #ce8b18;
+         }
+      }
+   }
+
+}
+
+
+

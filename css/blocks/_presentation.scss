@@ -1,3 +1,15 @@
 .presentation {
    background: url('/img/presentation/presentation_bg.jpg') center center / cover no-repeat;
+
+   &__container {
+      width: 660px;
+      height: 405px;
+      background-color: #ccc;
+      margin: 0 auto;
+
+      // @include tablets {
+      //    width: 440px;
+      //    height: 270px;
+      // }
+   }
 }

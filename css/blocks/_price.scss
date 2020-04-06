@@ -14,7 +14,6 @@
 
   &__container {
     overflow: hidden;
-    // transition: all 0.3s;
   }
 
   &__list {
@@ -23,13 +22,10 @@
     display: flex;
     flex: 1 0 auto;
     align-items: center;
-    will-change: right;
-    -webkit-transition: right 0.3s;
-    -moz-transition: right 0.3s;
-    -ms-transition: right 0.3s;
-    -o-transition: right 0.3s;
+    will-change: margin-left;
+    transition: .3s;
   }
-
+  
   &__item {
     width: 100%;
     position: relative;
@@ -57,7 +53,6 @@
 
     @include tablets {
       min-width: 90%;
-      // max-height: 320px;
     }
   }
   // todo разобраться с масштабирыванием изображений (img в обертке)

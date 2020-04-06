@@ -3,12 +3,13 @@
    min-height: rem(650px);
    width: 100%;
    position: relative;
+   scroll-snap-align: center; //* smooth scroll
 
    &__title {
       @include gagalin();
       font-size: rem(72px);
       color: $yellow;
-      // line-height: 1;
+      font-weight: 400; 
       letter-spacing: rem(2px);
       margin-bottom: rem(50px);
       // white-space: nowrap;

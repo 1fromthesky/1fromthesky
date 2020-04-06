@@ -9,13 +9,14 @@ function initPriceSlider() {
   const prevToggle = document.getElementById('prev-toggle');
   const nextToggle = document.getElementById('next-toggle');
   const priceContainer = document.getElementById('price-container');
+  const priceList = document.getElementById('price-list');
   const priceAllItems = priceContainer.querySelectorAll('.price__item');
 
   let currentWidth = 0;
   let currentIndex = 0;
 
   function slideToCurrent() {
-    priceContainer.style.marginLeft = -currentIndex * currentWidth + "px";
+    priceList.style.marginLeft = -currentIndex * currentWidth + "px";
   }
 
   function render() {
@@ -24,7 +25,7 @@ function initPriceSlider() {
       let priceItem = priceAllItems[i];
       priceItem.style.width = currentWidth + "px"; 
     }
-    priceContainer.style.width = (priceAllItems.length * currentWidth) + "px";
+    priceList.style.width = (priceAllItems.length * currentWidth) + "px";
     slideToCurrent()
   }
   render()
@@ -53,5 +54,3 @@ function initPriceSlider() {
     render()
   })
 }
-
-// !доработать разобрать!

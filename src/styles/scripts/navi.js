@@ -1,3 +1,4 @@
+(function() {
 document.addEventListener('DOMContentLoaded', function() {
    initNavToggle()
 })
@@ -44,3 +45,4 @@ function initNavToggle() {
 }
 
 // todo resize убирать активный класс при ширине больше tablets
+})()

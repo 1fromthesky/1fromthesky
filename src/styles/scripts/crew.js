@@ -1,3 +1,4 @@
+(function() {
 const openCard = 'card-member_open';
 let cardAll = [];
 
@@ -63,3 +64,4 @@ function initAccordion() {
 // }
 
 // cardMember.addEventListener('click', showDetails)
+})()

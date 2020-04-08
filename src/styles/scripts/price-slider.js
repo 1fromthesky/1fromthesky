@@ -1,4 +1,4 @@
-
+(function() {
 document.addEventListener('DOMContentLoaded', function() {
   initPriceSlider()
 })
@@ -54,3 +54,4 @@ function initPriceSlider() {
     render()
   })
 }
+})()

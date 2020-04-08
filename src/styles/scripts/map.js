@@ -1,3 +1,4 @@
+(function() {
 document.addEventListener('DOMContentLoaded', function() {
    ymaps.ready(init);
 });
@@ -33,3 +34,4 @@ function init() {
    
 };
 
+})()

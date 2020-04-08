@@ -1,5 +1,5 @@
 
-
+(function() {
 // const navElem = document.getElementsByClassName('navi__item');
 // // console.log(navElem);
 // for (let i = 0; i < navElem.length; i++) {
@@ -52,7 +52,7 @@
 // $(window).on('wheel', e => {
 //    const deltaY = e.originalEvent.deltaY;
 
-;
+// ;
 //    if (deltaY > 0) {
 //       scrollSection('next')
 //    }
@@ -62,3 +62,4 @@
 //    }
    
 // })
+})()

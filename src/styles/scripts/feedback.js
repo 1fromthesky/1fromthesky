@@ -1,3 +1,4 @@
+(function() {
 const feedBackList = document.querySelector('.feedback__list'); 
 const feedBackPerson = document.querySelectorAll('.feedback__item'); //* карточка человека
 const openFeedBackBtn = feedBackList.querySelectorAll('.btn');
@@ -20,3 +21,4 @@ function initFeedback() {
    })
 }
 
+})()

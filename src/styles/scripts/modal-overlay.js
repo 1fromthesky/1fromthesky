@@ -5,7 +5,7 @@ function createOverlay(template) {
    
    const fragment = document.createElement('div');
    fragment.innerHTML = template;
-
+   
    const overlayElement = fragment.querySelector('.overlay');
    const contentElement = fragment.querySelector('.overlay__content');
    const btnCloseElement = fragment.querySelector('#close-overlay');
@@ -23,14 +23,14 @@ function createOverlay(template) {
    });
    
    return {
-      open() {
+      openModal() {
          document.body.appendChild(overlayElement);
          document.body.style.overflow = 'hidden';
       },
-      close() {
+      closeModal() {
          btnCloseElement.click();
       },
-      setContent(content) {
+      setContentModal(content) {
          contentElement.innerHTML = content;
       }
    }

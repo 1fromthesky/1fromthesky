@@ -1,7 +1,9 @@
+(function() {
 const orderForm = document.forms.orderForm; //*форма
 const phone_input = orderForm.phone; //* поле - телефон
 const name_input = orderForm.name; //* поле - имя
 const buttonFormSubmit = document.querySelector("#send-form-btn"); //* поле - кнопка "заказать"
+
 
 //* Сортировка: number and name
 const checkNumber = function(event) {
@@ -54,10 +56,11 @@ buttonFormSubmit.addEventListener("click", (event) => {
   //* Общение с сервером
   //* Если форма не валидна, браузер будет выводить стандартные сообщения валидности
   //* Если валидна, выполнится код ниже
+  
   if (orderForm.checkValidity()) {
     event.preventDefault();
-    overlay.setContent('Ожидание ответа');
-    overlay.open()
+    overlay.setContentModal('Ожидание ответа');
+    overlay.openModal()
 
   //* Создание объекта FormData
     const data = new FormData();
@@ -75,11 +78,12 @@ buttonFormSubmit.addEventListener("click", (event) => {
     //* Обработчик ответа от сервера
     xhr.addEventListener('load', () => {
       if (xhr.status >= 400) {
-        overlay.setContent('Ошибка');
+        overlay.setContentModal('Ошибка');
       } else {
-        overlay.setContent(xhr.response.message);
+        overlay.setContentModal(xhr.response.message);
       }
     });
   } 
 });
 
+})()

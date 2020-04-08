@@ -1,3 +1,4 @@
+(function() {
 const carteItemsAll = document.getElementsByClassName('carte__item');
 const carteLinksAll = document.getElementsByClassName('carte__link');
 let elementLink = [];
@@ -32,3 +33,4 @@ function initMenuToggle() {
 }
 
 // todo при переключении аккордеона вначале анимации происходит дерганье
+})()

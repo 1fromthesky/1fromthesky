@@ -1,3 +1,4 @@
+(function() {
 let player;
 const playerContainer = $('.player');
 const muteOn = $('.player__mute');
@@ -65,19 +66,19 @@ const formatTime = timeSec => {
    return `${minutes} : ${seconds}`;
 };
 
-// * управление звуком
+// // * управление звуком
 
 
-const formatMute = function() {
+// const formatMute = function() {
 
-   const voiceBar = $('.player__mute-bar'); 
-   const toggleVoiceBar = $('.player__mute-bar-toggle'); 
-   const durationVoice = player.getVolume();
+//    const voiceBar = $('.player__mute-bar'); 
+//    const toggleVoiceBar = $('.player__mute-bar-toggle'); 
+//    const durationVoice = player.getVolume();
 
-   // toggleVoiceBar.css({
-   //    'width': 
-   // })
-}
+//    // toggleVoiceBar.css({
+//    //    'width': 
+//    // })
+// }
 
 // * добавляем форматированное время в элемент
 const onPlayerReady = () => {
@@ -154,3 +155,4 @@ function onYouTubeIframeAPIReady() {
 
 eventsInit();
 
+})()

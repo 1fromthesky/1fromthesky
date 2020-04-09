@@ -1,0 +1,19 @@
+.feedback {
+   background: $black;
+}
+.feedback__list {
+   display: flex;
+   flex-wrap: wrap;
+   height: 100%;
+}
+.feedback__item {
+   width: 25%;
+   height: 50%;
+   position: relative;
+   cursor: pointer;
+
+   @include tablets {
+      width: 50%;
+      height: 25%;
+   }
+}
